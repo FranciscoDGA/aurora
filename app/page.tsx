@@ -34,10 +34,10 @@ const PERSONAS = [
   { icon: <Gavel className="text-clara-600" />, t: 'Problemas no trabalho', d: 'Assédio, demissão na gravidez, direitos negados. Saiba o que a lei garante.' },
 ]
 
-const PLANOS: Array<{ id: keyof typeof PLANO_LABELS; preco: string; destaque?: string }> = [
-  { id: 'gratuito', preco: 'R$ 0' },
-  { id: 'clara_plus', preco: 'R$ 29,90/mês', destaque: 'Mais popular' },
-  { id: 'clara_pro', preco: 'R$ 79,90/mês' },
+const PLANOS: Array<{ id: keyof typeof PLANO_LABELS; preco: string; destaque?: string; href?: string }> = [
+  { id: 'gratuito', preco: 'R$ 0', href: '/triagem' },
+  { id: 'clara_plus', preco: 'R$ 29,90/mês', destaque: 'Mais popular', href: 'https://pay.kiwify.com.br/MTsDC1d' },
+  { id: 'clara_pro', preco: 'R$ 79,90/mês', href: 'https://pay.kiwify.com.br/spbY82Q' },
 ]
 
 const FAQ = [
@@ -177,7 +177,7 @@ export default function Home() {
                       <li key={f} className="flex items-start gap-2"><Check size={16} className="text-clara-600 shrink-0 mt-0.5" />{f}</li>
                     ))}
                   </ul>
-                  <Link href={p.id === 'gratuito' ? '/triagem' : '/cadastro'}>
+                  <Link href={p.href || '/cadastro'}>
                     <Button className="w-full" variant={p.destaque ? 'default' : 'outline'}>
                       {p.id === 'gratuito' ? 'Começar grátis' : `Assinar ${PLANO_LABELS[p.id].label}`}
                     </Button>

@@ -4,51 +4,76 @@ import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Sobre a Clara — Seus Direitos, Claros',
-  description: 'O que é a Clara, para quem ela existe e como funciona a navegadora de direitos da mulher.',
+  description: 'Conheça a história e o propósito da Clara, a navegadora de direitos da mulher criada para democratizar o acesso à justiça no Brasil.',
 }
 
 export default function SobrePage() {
   return (
-    <div className="min-h-screen bg-clara-50 px-4 py-10">
-      <div className="mx-auto max-w-3xl space-y-6">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-center">Sobre a Clara</h1>
-        <Card>
-          <CardHeader><CardTitle>O que é</CardTitle></CardHeader>
-          <CardContent className="space-y-3 text-neutral-800 leading-relaxed">
+    <div className="min-h-screen bg-clara-50 px-4 py-16">
+      <div className="mx-auto max-w-4xl space-y-12">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900">Sobre a Clara</h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Nascemos com um propósito claro: transformar o medo e a desinformação em poder e ação.
+          </p>
+        </div>
+
+        <Card className="border-0 shadow-sm">
+          <CardHeader>
+            <CardTitle className="text-2xl text-clara-700">A Nossa Missão</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-neutral-700 text-lg leading-relaxed">
             <p>
-              A Clara é uma navegadora de direitos da mulher: uma plataforma que traduz histórias
-              contadas com palavras simples em <strong>triagem jurídica, documentos-base e passo a passo</strong> para
-              protocolar na Defensoria Pública ou com advogada.
+              A Clara é uma <strong>navegadora de direitos da mulher</strong>. Uma plataforma legal tech projetada para democratizar o acesso à justiça no Brasil. Traduzimos histórias reais, contadas com palavras do dia a dia, em triagens jurídicas precisas, documentos-base e um passo a passo prático para protocolar ações na Defensoria Pública ou com uma advogada.
             </p>
             <p>
-              Nascemos de um problema visível: milhões de mulheres têm direitos (pensão, guarda, medida
-              protetiva, estabilidade) e não conseguem exercê-los por falta de informação, dinheiro para
-              advogado ou medo do sistema. A Clara existe para encurtar esse caminho.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader><CardTitle>O que a Clara não é</CardTitle></CardHeader>
-          <CardContent className="space-y-3 text-neutral-800 leading-relaxed">
-            <p>
-              A Clara <strong>não é escritório de advocacia</strong> e não substitui a orientação jurídica
-              individual. Os documentos gerados são <strong>bases para revisão</strong> da Defensoria Pública
-              ou de advogada. Em situação de risco, a Clara não substitui o atendimento emergencial:
-              ligue <strong>180</strong> ou <strong>190</strong>.
+              Sabemos que o sistema judiciário pode ser frio, caro e inacessível. Milhões de mulheres deixam de lutar por seus direitos — como pensão alimentícia justa, guarda dos filhos, proteção contra violência e estabilidade no trabalho — por falta de informação ou por esgotamento emocional. A Clara existe para encurtar o caminho entre o problema e a solução.
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader><CardTitle>Como funciona</CardTitle></CardHeader>
-          <CardContent>
-            <ol className="list-decimal ml-5 space-y-1.5">
-              <li>Você conta sua história na <Link href="/triagem" className="text-clara-700 underline">triagem gratuita</Link>, por texto ou voz.</li>
-              <li>A Clara identifica seu tipo de caso e gera os documentos-base em PDF.</li>
-              <li>Você leva tudo pronto à Defensoria com o <Link href="/checklist" className="text-clara-700 underline">checklist</Link>.</li>
-            </ol>
-            <div className="mt-4"><Link href="/triagem"><Button>Começar agora</Button></Link></div>
-          </CardContent>
-        </Card>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="border-0 shadow-sm bg-white">
+            <CardHeader>
+              <CardTitle className="text-xl text-neutral-900">O que a Clara faz por você</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-neutral-700">
+              <ul className="list-disc ml-5 space-y-2">
+                <li><strong>Triagem acolhedora:</strong> Analisa seu caso sem julgamentos e sem juridiquês.</li>
+                <li><strong>Geração de documentos:</strong> Cria minutas de petições iniciais prontas para revisão profissional.</li>
+                <li><strong>Clareza no processo:</strong> Entrega um mapa exato do que você deve fazer a seguir e onde deve ir (Defensoria, Delegacia, etc).</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-0 shadow-sm bg-white">
+            <CardHeader>
+              <CardTitle className="text-xl text-neutral-900">Limites Éticos e Legais</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-neutral-700">
+              <ul className="list-disc ml-5 space-y-2">
+                <li><strong>A Clara não é escritório de advocacia:</strong> Não representamos judicialmente nem prestamos consultoria particular.</li>
+                <li><strong>Revisão necessária:</strong> Todos os documentos gerados precisam ser revisados e assinados por um profissional (Defensoria ou Advogada) antes do protocolo no fórum.</li>
+                <li><strong>Não somos canal de emergência:</strong> Se você estiver em perigo imediato, ligue para 190 (Polícia) ou 180 (Central de Atendimento à Mulher).</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="text-center bg-white p-8 rounded-2xl shadow-sm border border-neutral-100">
+          <h2 className="text-2xl font-bold mb-4">Pronta para assumir o controle?</h2>
+          <p className="text-muted-foreground mb-6">
+            Você não precisa conhecer a lei para buscar justiça. Conte-nos o que aconteceu.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/triagem">
+              <Button size="lg" className="w-full sm:w-auto">Fazer triagem gratuita</Button>
+            </Link>
+            <Link href="/contato">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto">Falar com a equipe</Button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   )

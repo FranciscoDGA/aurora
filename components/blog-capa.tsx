@@ -1,26 +1,41 @@
-import { Baby, ShieldAlert, Briefcase, CreditCard, Scale } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Post } from '@/lib/blog/types'
+import Image from 'next/image'
 
-// Capa própria por categoria (SVG/CSS, sem fotos externas):
-// visual profissional sem risco de licença/atribuição.
-const ESTILOS: Record<Post['categoria'], { grad: string; Icon: typeof Scale }> = {
-  'Família': { grad: 'from-rose-500 via-pink-500 to-clara-600', Icon: Baby },
-  'Violência': { grad: 'from-red-700 via-rose-700 to-clara-900', Icon: ShieldAlert },
-  'Trabalho': { grad: 'from-indigo-600 via-violet-600 to-clara-700', Icon: Briefcase },
-  'Consumidor': { grad: 'from-amber-500 via-orange-500 to-rose-500', Icon: CreditCard },
-  'Direitos': { grad: 'from-emerald-600 via-teal-600 to-clara-700', Icon: Scale },
+// Capa usando fotos reais (Unsplash) por categoria
+const IMAGENS_POR_CATEGORIA: Record<Post['categoria'], string[]> = {
+  'Família': [
+    'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=800&auto=format&fit=crop'
+  ],
+  'Violência': [
+    'https://images.unsplash.com/photo-1564122315579-1c74ecef8115?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1520694478166-daaaaaec74b4?q=80&w=800&auto=format&fit=crop'
+  ],
+  'Trabalho': [
+    'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop'
+  ],
+  'Consumidor': [
+    'https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=800&auto=format&fit=crop'
+  ],
+  'Direitos': [
+    'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800&auto=format&fit=crop'
+  ],
 }
 
-// Variante determinística por post (hash do slug): mesma identidade por
-// categoria, mas cada post ganha combinação própria de direção/brilho.
 function varianteDe(semente = ''): number {
   let h = 0
   for (let i = 0; i < semente.length; i++) h = (h * 31 + semente.charCodeAt(i)) >>> 0
   return h % 3
 }
-
-const DIRECOES = ['bg-gradient-to-br', 'bg-gradient-to-tr', 'bg-gradient-to-bl']
 
 export function CapaPost({
   categoria,
@@ -35,41 +50,26 @@ export function CapaPost({
   semente?: string
   rotulo?: boolean
 }) {
-  const { grad, Icon } = ESTILOS[categoria]
-  const v = varianteDe(semente || categoria)
+  const imagens = IMAGENS_POR_CATEGORIA[categoria] || IMAGENS_POR_CATEGORIA['Direitos']
+  const index = varianteDe(semente || categoria)
+  const imageUrl = imagens[index]
+
   return (
     <div
-      className={cn('relative overflow-hidden', DIRECOES[v], grad, className)}
+      className={cn('relative overflow-hidden bg-neutral-200', className)}
       role="img"
-      aria-label={`Ilustração: ${categoria}`}
+      aria-label={`Imagem ilustrativa: ${categoria}`}
     >
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            v === 1
-              ? 'radial-gradient(circle at 20% 15%, white 0, transparent 35%), radial-gradient(circle at 85% 90%, white 0, transparent 30%)'
-              : 'radial-gradient(circle at 80% 20%, white 0, transparent 35%), radial-gradient(circle at 15% 85%, white 0, transparent 30%)',
-        }}
+      <img
+        src={imageUrl}
+        alt={`Categoria ${categoria}`}
+        className="object-cover w-full h-full"
       />
-      {v !== 2 ? (
-        <>
-          <div className="absolute -right-6 -bottom-8 rounded-full border-[10px] border-white/15 w-40 h-40" />
-          <div className="absolute -left-4 -top-6 rounded-full border-[6px] border-white/10 w-24 h-24" />
-        </>
-      ) : (
-        <>
-          <div className="absolute -left-8 -bottom-10 rotate-12 rounded-2xl border-[10px] border-white/15 w-44 h-28" />
-          <div className="absolute -right-5 -top-8 -rotate-12 rounded-2xl border-[6px] border-white/10 w-28 h-20" />
-        </>
-      )}
-      <div className="relative h-full grid place-items-center p-6">
-        <span className={cn('grid place-items-center bg-white/20 backdrop-blur-sm p-4', v === 2 ? 'rounded-full' : 'rounded-2xl')}>
-          <Icon size={iconSize} className="text-white" />
-        </span>
-      </div>
+      {/* Overlay leve para dar contraste */}
+      <div className="absolute inset-0 bg-black/10" />
+      
       {rotulo && (
-        <span className="absolute bottom-3 left-4 rounded-full bg-black/30 px-3 py-1 text-xs font-semibold text-white">
+        <span className="absolute bottom-3 left-4 rounded-full bg-black/50 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
           {categoria}
         </span>
       )}
