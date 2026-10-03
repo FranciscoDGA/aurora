@@ -1,4 +1,4 @@
--- Clara: schema inicial (Supabase / Postgres)
+-- Aurora: schema inicial (Supabase / Postgres)
 -- Rodar com: supabase db push
 
 -- 1. Perfis (1:1 com auth.users)
@@ -9,7 +9,7 @@ create table if not exists public.perfis (
   estado char(2),
   renda_faixa text default 'ate_1sm',
   tem_filhos boolean default false,
-  plano text default 'gratuito' check (plano in ('gratuito','clara_plus','clara_pro')),
+  plano text default 'gratuito' check (plano in ('gratuito','aurora_plus','aurora_pro')),
   criado_em timestamptz default now(),
   atualizado_em timestamptz default now()
 );

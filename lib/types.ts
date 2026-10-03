@@ -31,7 +31,7 @@ export interface Perfil {
   estado: string | null
   renda_faixa: string
   tem_filhos: boolean
-  plano: 'gratuito' | 'clara_plus' | 'clara_pro'
+  plano: 'gratuito' | 'aurora_plus' | 'aurora_pro'
 }
 
 export interface Caso {

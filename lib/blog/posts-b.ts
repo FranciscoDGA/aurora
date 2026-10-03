@@ -41,7 +41,7 @@ export const POSTS_B: Post[] = [
 <p><strong>Estou em experiência. Tenho direito?</strong> Sim, pela Súmula 244 do TST.</p>
 <p><strong>E se eu descobrir a gravidez depois da demissão?</strong> O direito existe do mesmo jeito — desde que a concepção seja anterior à dispensa. Faça o exame as soon as possible e procure ajuda.</p>
 <p><strong>Aborto espontâneo encerra tudo?</strong> A estabilidade se encerra, mas você mantém licença-saúde pelo período de recuperação e todos os direitos do período anterior.</p>
-<p>Conte sua história na <a href="/triagem">triagem da Clara</a> e receba a base da reclamatória + o guia de estabilidade para levar ao sindicato ou à Defensoria.</p>`,
+<p>Conte sua história na <a href="/triagem">triagem da Aurora</a> e receba a base da reclamatória + o guia de estabilidade para levar ao sindicato ou à Defensoria.</p>`,
   },
   {
     slug: 'assedio-sexual-no-trabalho-o-que-fazer',
@@ -87,7 +87,7 @@ export const POSTS_B: Post[] = [
 <p><strong>Posso gravar conversas?</strong> Gravação feita por um dos interlocutores (você) é lícita como prova. Instalação de escuta por terceiros, não.</p>
 <p><strong>E se for cliente, não chefe?</strong> A empresa deve proteger você (trocar sua alocação, advertir o cliente). Se nada faz, responde igualmente.</p>
 <p><strong>Tenho medo de retaliação. Denuncio mesmo assim?</strong> MPT aceita denúncia sigilosa, e a lei proíbe retaliação — demissão após denúncia pode ser anulada. Procure o sindicato antes para blindar os passos.</p>
-<p>Organize seu caso na <a href="/triagem">triagem da Clara</a> e busque apoio jurídico na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria Pública</a>.</p>`,
+<p>Organize seu caso na <a href="/triagem">triagem da Aurora</a> e busque apoio jurídico na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria Pública</a>.</p>`,
   },
   {
     slug: 'como-fazer-boletim-de-ocorrencia',
@@ -137,7 +137,7 @@ export const POSTS_B: Post[] = [
 </ol>
 <h2>Exemplo prático</h2>
 <p>Fernanda sofreu ameaças por WhatsApp durante um mês e “achava que print não valia nada”. Quando ele apareceu no seu trabalho, ela fez o BO levando os prints organizados por data + duas colegas como testemunhas + o relato cronológico. Resultado: medida protetiva deferida em 24h e inquérito instaurado — tudo ancorado naquele primeiro registro bem feito.</p>
-<p>Quer um roteiro pronto do que levar e falar? Gere o <strong>guia de BO</strong> na <a href="/triagem">triagem da Clara</a> em minutos.</p>`,
+<p>Quer um roteiro pronto do que levar e falar? Gere o <strong>guia de BO</strong> na <a href="/triagem">triagem da Aurora</a> em minutos.</p>`,
   },
   {
     slug: 'alimentos-provisorios-e-gravidicos',
@@ -172,7 +172,7 @@ export const POSTS_B: Post[] = [
 <p><strong>Posso pedir provisórios em revisional?</strong> Sim — ao pedir aumento, peça tutela provisória do novo valor.</p>
 <p><strong>Gravídicos valem para qualquer gestante?</strong> Sim, inclusive sem união formal — bastam indícios de paternidade.</p>
 <p><strong>E se o DNA der negativo depois?</strong> Os valores pagos em gravídicos, de boa-fé, em regra não são devolvidos; a pensão futura cessa.</p>
-<p>Na <a href="/triagem">triagem da Clara</a>, casos de pensão já saem com o pedido de provisórios sugerido e a base pronta para a <a href="/checklist">Defensoria</a>.</p>`,
+<p>Na <a href="/triagem">triagem da Aurora</a>, casos de pensão já saem com o pedido de provisórios sugerido e a base pronta para a <a href="/checklist">Defensoria</a>.</p>`,
   },
   {
     slug: 'uniao-estavel-direitos-e-reconhecimento',
@@ -218,6 +218,6 @@ export const POSTS_B: Post[] = [
 <p><strong>Precisa registrar para valer?</strong> Não para existir — mas registrar evita briga sobre <em>se</em> existiu e <em>quando</em> começou.</p>
 <p><strong>Traição impede o reconhecimento?</strong> Não, por si só. O que importa são os 4 elementos — inclusive contra terceiros de boa-fé há proteção.</p>
 <p><strong>Posso converter em casamento?</strong> Sim: pedido ao cartório de registro civil, com efeito retroativo à data da união, se desejarem.</p>
-<p>Viveu uma união e precisa formalizar direitos? Faça a <a href="/triagem">triagem da Clara</a> e leve a base à <a href="/checklist">Defensoria</a>.</p>`,
+<p>Viveu uma união e precisa formalizar direitos? Faça a <a href="/triagem">triagem da Aurora</a> e leve a base à <a href="/checklist">Defensoria</a>.</p>`,
   },
 ]

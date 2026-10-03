@@ -1,10 +1,18 @@
 import { NextResponse } from 'next/server'
 import { triar } from '@/lib/ai/triage'
+import { ipDaRequisicao, limiteAtingido } from '@/lib/rate-limit'
 
 export const runtime = 'edge'
 
 export async function POST(req: Request) {
   try {
+    if (limiteAtingido(`triagem:${ipDaRequisicao(req)}`)) {
+      return NextResponse.json(
+        { error: 'Muitas tentativas. Aguarde um minuto e tente de novo.' },
+        { status: 429 },
+      )
+    }
+
     const body = await req.json()
     const relato = String(body?.relato ?? '').trim()
     if (relato.length < 10) {

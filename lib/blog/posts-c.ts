@@ -39,7 +39,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Limpei pagando. Posso pedir dano?</strong> Se a dívida era indevida e você pagou sob pressão, sim — guarde o comprovante do pagamento.</p>
 <p><strong>Empresa sumiu/faliu?</strong> Dá para pedir a exclusão direto aos birôs (Serasa/SPC) e discutir responsabilidade conforme o caso.</p>
 <p><strong>Quanto tempo demora?</strong> Liminar: dias. Sentença no Juizado: em geral 4–12 meses.</p>
-<p>Gere a base da declaratória na <a href="/triagem">triagem da Clara</a> e busque atendimento na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria</a> ou no Juizado da sua comarca.</p>`,
+<p>Gere a base da declaratória na <a href="/triagem">triagem da Aurora</a> e busque atendimento na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria</a> ou no Juizado da sua comarca.</p>`,
   },
   {
     slug: 'pensao-atrasada-execucao-e-prisao',
@@ -84,7 +84,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Ele paga metade. Executo a diferença?</strong> Sim — diferença é débito como qualquer outro.</p>
 <p><strong>Ele está preso por outro motivo. E a pensão?</strong> A obrigação continua; executa-se contra bens e, na soltura, o saldo.</p>
 <p><strong>Posso executar pensão de acordo verbal?</strong> Não diretamente — primeiro é preciso formalizar (ação de alimentos ou homologação do acordo). Depois, executa.</p>
-<p>Monte sua execução com a <a href="/triagem">triagem da Clara</a> e revise o valor em <a href="/blog/como-pedir-pensao-alimenticia-passo-a-passo">como pedir pensão</a>.</p>`,
+<p>Monte sua execução com a <a href="/triagem">triagem da Aurora</a> e revise o valor em <a href="/blog/como-pedir-pensao-alimenticia-passo-a-passo">como pedir pensão</a>.</p>`,
   },
   {
     slug: 'regulamentacao-de-visitas',
@@ -184,7 +184,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Posso vender bem comum antes da partilha?</strong> Só com anuência do outro (ou ordem judicial). Venda unilateral é anulável.</p>
 <p><strong>Aluguel de imóvel comum: de quem é?</strong> Metade de cada um, desde a separação de fato — cobre na partilha.</p>
 <p><strong>Empresa aberta antes, que cresceu depois?</strong> A valorização no período pode entrar — exige perícia. Não aceite “é minha e pronto”.</p>
-<p>Gere a base do <strong>plano de partilha</strong> na <a href="/triagem">triagem da Clara</a> e revise cada item com a <a href="/checklist">Defensoria</a> antes de assinar. Combine com <a href="/blog/divorcio-consensual-ou-litigioso">divórcio consensual ou litigioso</a>.</p>`,
+<p>Gere a base do <strong>plano de partilha</strong> na <a href="/triagem">triagem da Aurora</a> e revise cada item com a <a href="/checklist">Defensoria</a> antes de assinar. Combine com <a href="/blog/divorcio-consensual-ou-litigioso">divórcio consensual ou litigioso</a>.</p>`,
   },
   {
     slug: 'defensoria-publica-como-conseguir-atendimento-gratuito',
@@ -212,7 +212,7 @@ export const POSTS_C: Post[] = [
 <li>RG, CPF e comprovante de endereço (originais + cópias);</li>
 <li>Comprovante de renda <em>e</em> de despesas (aluguel, escola, remédios);</li>
 <li>Documentos do caso: certidões, <a href="/blog/como-fazer-boletim-de-ocorrencia">BOs</a>, prints, contratos, planilha de gastos;</li>
-<li>Documentos gerados na <a href="/triagem">triagem da Clara</a>, impressos — você economiza uma consulta inteira;</li>
+<li>Documentos gerados na <a href="/triagem">triagem da Aurora</a>, impressos — você economiza uma consulta inteira;</li>
 <li>Se já há processo: número, vara e últimas movimentações.</li>
 </ul>
 <h2>Como agendar?</h2>
@@ -226,7 +226,7 @@ export const POSTS_C: Post[] = [
 <li><strong>Volte quando chamada</strong> e avise mudança de endereço/telefone — processo parado por falta de contato é comum.</li>
 </ol>
 <h2>Exemplo prático</h2>
-<p>Sem dinheiro para advogada, Luana chegou à Defensoria com: linha do tempo escrita, planilha de gastos dos filhos, prints do ex admitindo a dívida e a petição-base da Clara impressa. Em 40 minutos saiu com a ação de alimentos protocolada + pedido de provisórios. O defensor disse o que ela ouve aqui: “quem chega organizada sai com processo andando”.</p>
+<p>Sem dinheiro para advogada, Luana chegou à Defensoria com: linha do tempo escrita, planilha de gastos dos filhos, prints do ex admitindo a dívida e a petição-base da Aurora impressa. Em 40 minutos saiu com a ação de alimentos protocolada + pedido de provisórios. O defensor disse o que ela ouve aqui: “quem chega organizada sai com processo andando”.</p>
 <h2>E se não houver Defensoria na sua cidade?</h2>
 <p>Opções: <strong>unidade regional</strong> mais próxima, <strong>faculdades de Direito</strong> (núcleos de prática jurídica atendem de graça), <strong>OAB</strong> (convênios de assistência), <strong>Juizado Especial</strong> (causas simples sem advogado) e <strong>Ministério Público</strong> (em violência e infância). Não aceite “não tem jeito” sem tentar essas portas.</p>
 <h2>Perguntas frequentes</h2>

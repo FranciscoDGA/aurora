@@ -116,7 +116,7 @@ export default function TriagemPage() {
   const urg = resultado ? URGENCIA_LABELS[resultado.urgencia] : null
 
   return (
-    <div className="min-h-screen bg-clara-50 px-4 py-10">
+    <div className="min-h-screen bg-aurora-50 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
         <Card>
           <CardHeader>
@@ -140,7 +140,7 @@ export default function TriagemPage() {
               </Button>
               <Button variant="outline" onClick={() => { recogRef.current?.stop(); setRelato(''); setResultado(null) }}>Limpar</Button>
             </div>
-            {gravando && <p className="text-sm text-clara-600 animate-pulse">🎤 Ouvindo... fale normalmente e clique em Parar.</p>}
+            {gravando && <p className="text-sm text-aurora-600 animate-pulse">🎤 Ouvindo... fale normalmente e clique em Parar.</p>}
           </CardContent>
         </Card>
 
@@ -163,9 +163,9 @@ export default function TriagemPage() {
               </div>
               {resultado.documentos_sugeridos.length > 0 && (
                 <div>
-                  <h3 className="font-semibold mb-2">Documentos que a Clara gera</h3>
+                  <h3 className="font-semibold mb-2">Documentos que a Aurora gera</h3>
                   <div className="flex flex-wrap gap-2">
-                    {resultado.documentos_sugeridos.map((d) => <Badge key={d} className="bg-clara-50 text-clara-700 border-clara-200">📄 {d}</Badge>)}
+                    {resultado.documentos_sugeridos.map((d) => <Badge key={d} className="bg-aurora-50 text-aurora-700 border-aurora-200">📄 {d}</Badge>)}
                   </div>
                 </div>
               )}

@@ -22,12 +22,12 @@ export default async function DashboardPage() {
   const { data: perfil } = await supabase.from('perfis').select('nome, plano').eq('id', user.id).single()
 
   return (
-    <div className="min-h-screen bg-clara-50">
+    <div className="min-h-screen bg-aurora-50">
       <header className="border-b bg-white">
         <div className="mx-auto max-w-5xl px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="font-bold text-xl text-clara-700">Clara</Link>
+          <Link href="/" className="font-bold text-xl text-aurora-700">Aurora</Link>
           <div className="flex items-center gap-2">
-            <Badge className="bg-clara-50 text-clara-700 border-clara-200">{perfil?.plano ?? 'gratuito'}</Badge>
+            <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{perfil?.plano ?? 'gratuito'}</Badge>
             <span className="text-sm text-muted-foreground hidden sm:inline">{perfil?.nome ?? user.email}</span>
             <Link href="/triagem"><Button size="sm">+ Novo caso</Button></Link>
           </div>

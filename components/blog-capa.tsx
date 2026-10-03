@@ -60,10 +60,12 @@ export function CapaPost({
       role="img"
       aria-label={`Imagem ilustrativa: ${categoria}`}
     >
-      <img
+      <Image
         src={imageUrl}
         alt={`Categoria ${categoria}`}
-        className="object-cover w-full h-full"
+        fill
+        sizes="(max-width: 768px) 100vw, 33vw"
+        className="object-cover"
       />
       {/* Overlay leve para dar contraste */}
       <div className="absolute inset-0 bg-black/10" />

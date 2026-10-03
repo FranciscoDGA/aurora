@@ -1,4 +1,4 @@
-# Clara — Seus Direitos, Claros 💜
+# Aurora — Seus Direitos, Claros 💜
 Navegadora de direitos da mulher: triagem por IA + documentos jurídicos + passo a passo.
 
 ## Stack
@@ -21,8 +21,23 @@ npm run dev                 # http://localhost:3000
 ## Deploy Vercel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 - Root: `./`
-- Env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`
+- Env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL`, `KIWIFY_WEBHOOK_TOKEN`
 - Região: `gru1` (vercel.json já configurado)
+
+## Checklist pós-rebrand (Clara → Aurora)
+- [ ] `npm run db:push` — aplica as migrações `20261003000000` (planos `aurora_plus`/`aurora_pro`) e `20261003000100` (RLS de `logs_ia`)
+- [ ] Painel Vercel: novo nome do projeto + env `NEXT_PUBLIC_APP_URL` com o domínio real (sem ela, robots/sitemap/canonical caem em localhost)
+- [ ] Meta Developers: se o webhook do WhatsApp estiver ativo, o Verify Token passou a ser `aurora_verify_123`
+- [ ] Kiwify: conferir nomes/produtos dos checkout de `Aurora+` e `Aurora Pro` (links em `app/page.tsx`) e configurar o **token do webhook** (`KIWIFY_WEBHOOK_TOKEN`) — sem segredo, entregas são recusadas em produção
+- [ ] E-mail de contato: trocar `oi@aurora.direito.br` pelo endereço real (hoje é placeholder)
+
+## Verificações
+```bash
+npm run lint   # ESLint (next/core-web-vitals)
+npm test       # Vitest (unit tests)
+npm run build  # type-check + build
+```
+
 
 ## Rotas
 - `/` landing • `/triagem` triagem gratuita (sem login) • `/login` `/cadastro`

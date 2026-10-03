@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { gerarDocumento } from '@/lib/documents/templates'
 
-const LIMITE_MENSAL: Record<string, number> = { gratuito: 2, clara_plus: 9999, clara_pro: 9999 }
+const LIMITE_MENSAL: Record<string, number> = { gratuito: 2, aurora_plus: 9999, aurora_pro: 9999 }
 
 export async function POST(req: Request, { params }: { params: { id: string } }) {
   const supabase = createClient()
@@ -17,10 +17,14 @@ export async function POST(req: Request, { params }: { params: { id: string } })
 
   const inicioMes = new Date()
   inicioMes.setDate(1); inicioMes.setHours(0, 0, 0, 0)
-  const { count } = await supabase.from('documentos').select('id', { count: 'exact', head: true })
-    .eq('caso_id', params.id).gte('gerado_em', inicioMes.toISOString())
+  // Conta por usuário (não por caso): arquivar e abrir outro caso não zera o limite.
+  const { count } = await supabase
+    .from('documentos')
+    .select('id, casos!inner(usuario_id)', { count: 'exact', head: true })
+    .eq('casos.usuario_id', user.id)
+    .gte('gerado_em', inicioMes.toISOString())
   if ((count ?? 0) >= (LIMITE_MENSAL[plano] ?? 2)) {
-    return NextResponse.json({ error: 'Limite mensal de documentos atingido. Assine Clara+ para ilimitado.' }, { status: 402 })
+    return NextResponse.json({ error: 'Limite mensal de documentos atingido. Assine Aurora+ para ilimitado.' }, { status: 402 })
   }
 
   const body = await req.json()

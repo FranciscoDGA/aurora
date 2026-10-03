@@ -16,7 +16,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPost(POSTS, params.slug)
   if (!post) return {}
   return {
-    title: `${post.titulo} | Blog da Clara`,
+    title: `${post.titulo} | Blog da Aurora`,
     description: post.descricao,
     openGraph: { title: post.titulo, description: post.descricao, type: 'article' },
   }
@@ -33,7 +33,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     headline: post.titulo,
     description: post.descricao,
     datePublished: post.data,
-    author: { '@type': 'Organization', name: 'Clara — Seus Direitos, Claros' },
+    author: { '@type': 'Organization', name: 'Aurora — Seus Direitos, Claros' },
     inLanguage: 'pt-BR',
   }
 
@@ -43,8 +43,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-10">
         <div className="mx-auto max-w-3xl px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-clara-600 text-white"><Scale size={20} /></span>
-            Clara
+            <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
+            Aurora
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/blog"><Button variant="ghost" size="sm">← Blog</Button></Link>
@@ -54,7 +54,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       </header>
       <article className="mx-auto max-w-3xl px-4 py-10">
         <div className="flex flex-wrap items-center gap-2">
-          <Badge className="bg-clara-50 text-clara-700 border-clara-200">{post.categoria}</Badge>
+          <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
           <span className="text-xs text-muted-foreground">
             {new Date(post.data + 'T12:00:00').toLocaleDateString('pt-BR')} • {post.leituraMin} min de leitura
           </span>
@@ -64,11 +64,11 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <CapaPost categoria={post.categoria} semente={post.slug} className="mt-6 h-56 md:h-64 rounded-xl" iconSize={64} />
 
         <div
-          className="post-conteudo mt-8 space-y-4 text-[1.05rem] leading-relaxed text-neutral-800 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:pt-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:space-y-1.5 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:space-y-1.5 [&_a]:text-clara-700 [&_a]:underline"
+          className="post-conteudo mt-8 space-y-4 text-[1.05rem] leading-relaxed text-neutral-800 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:pt-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:space-y-1.5 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:space-y-1.5 [&_a]:text-aurora-700 [&_a]:underline"
           dangerouslySetInnerHTML={{ __html: post.conteudo }}
         />
 
-        <Card className="mt-10 bg-clara-50 border-clara-200">
+        <Card className="mt-10 bg-aurora-50 border-aurora-200">
           <CardHeader><CardTitle>Precisa aplicar isso no seu caso?</CardTitle></CardHeader>
           <CardContent className="flex flex-col sm:flex-row gap-2">
             <Link href="/triagem"><Button>Fazer triagem gratuita</Button></Link>
@@ -78,7 +78,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
         <p className="mt-6 text-xs text-muted-foreground">
           Aviso: conteúdo informativo e geral, não substitui orientação jurídica individual. Para o seu caso,
-          leve os documentos gerados pela Clara à Defensoria Pública ou advogada.
+          leve os documentos gerados pela Aurora à Defensoria Pública ou advogada.
         </p>
 
         {relacionados.length > 0 && (
@@ -89,7 +89,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 <Link key={r.slug} href={`/blog/${r.slug}`}>
                   <Card className="h-full hover:shadow-md transition-shadow">
                     <CardContent className="p-4">
-                      <Badge className="bg-clara-50 text-clara-700 border-clara-200 mb-2">{r.categoria}</Badge>
+                      <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200 mb-2">{r.categoria}</Badge>
                       <p className="font-semibold text-sm leading-snug">{r.titulo}</p>
                     </CardContent>
                   </Card>

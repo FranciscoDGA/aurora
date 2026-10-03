@@ -8,7 +8,7 @@ import { TIPO_CASO_LABELS } from '@/lib/constants'
 import type { Caso, Documento } from '@/lib/types'
 import { jsPDF } from 'jspdf'
 
-// Gera PDF com texto selecionável (sem html2canvas): cabeçalho Clara,
+// Gera PDF com texto selecionável (sem html2canvas): cabeçalho Aurora,
 // corpo com quebra de linha/página e rodapé com aviso legal.
 function baixarPDF(doc: Documento) {
   const pdf = new jsPDF({ unit: 'mm', format: 'a4' })
@@ -19,7 +19,7 @@ function baixarPDF(doc: Documento) {
 
   pdf.setFont('helvetica', 'bold')
   pdf.setFontSize(14)
-  pdf.text('Clara — Seus Direitos, Claros', margem, y)
+  pdf.text('Aurora — Seus Direitos, Claros', margem, y)
   y += 7
   pdf.setFontSize(11)
   pdf.text(doc.titulo, margem, y)
@@ -34,7 +34,7 @@ function baixarPDF(doc: Documento) {
   const rodape = (p: number) => {
     pdf.setFontSize(8)
     pdf.setTextColor(130)
-    pdf.text(`Documento-base gerado pela Clara. Leve à Defensoria/advogada. Pág. ${p}`, margem, 287)
+    pdf.text(`Documento-base gerado pela Aurora. Leve à Defensoria/advogada. Pág. ${p}`, margem, 287)
     pdf.setTextColor(0)
     pdf.setFontSize(10)
   }
@@ -45,7 +45,7 @@ function baixarPDF(doc: Documento) {
     y += 5
   }
   rodape(pagina)
-  pdf.save(`clara_${doc.tipo}.pdf`)
+  pdf.save(`aurora_${doc.tipo}.pdf`)
 }
 
 export default function CasoPage({ params }: { params: { id: string } }) {
@@ -98,7 +98,7 @@ export default function CasoPage({ params }: { params: { id: string } }) {
     : ['peticao_alimentos', 'gratuidade']
 
   return (
-    <div className="min-h-screen bg-clara-50 px-4 py-8">
+    <div className="min-h-screen bg-aurora-50 px-4 py-8">
       <div className="mx-auto max-w-4xl space-y-6">
         <Link href="/dashboard"><Button variant="ghost" size="sm">← Voltar</Button></Link>
         <Link href="/checklist"><Button variant="outline" size="sm">Checklist e endereços da Defensoria</Button></Link>

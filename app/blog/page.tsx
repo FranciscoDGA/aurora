@@ -8,7 +8,7 @@ import { POSTS } from '@/lib/blog'
 import { CATEGORIAS, getAllPosts } from '@/lib/blog/types'
 
 export const metadata = {
-  title: 'Blog — Direitos da mulher explicados sem juridiquês | Clara',
+  title: 'Blog — Direitos da mulher explicados sem juridiquês | Aurora',
   description: 'Guias práticos sobre pensão, guarda, divórcio, medida protetiva, direitos da gestante e mais. Conteúdo gratuito e atualizado.',
 }
 
@@ -18,12 +18,12 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
   const posts = cat ? todos.filter((p) => p.categoria === cat) : todos
 
   return (
-    <div className="min-h-screen bg-clara-50">
+    <div className="min-h-screen bg-aurora-50">
       <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-10">
         <div className="mx-auto max-w-5xl px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-clara-600 text-white"><Scale size={20} /></span>
-            Clara
+            <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
+            Aurora
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/"><Button variant="ghost" size="sm">Início</Button></Link>
@@ -34,18 +34,18 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
       <div className="px-4 py-10">
       <div className="mx-auto max-w-5xl space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Blog da Clara</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Blog da Aurora</h1>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Direitos da mulher explicados sem juridiquês: pensão, guarda, divórcio, medida protetiva,
             trabalho e consumo. Leia e, se precisar, gere seus documentos.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             <Link href="/blog">
-              <Badge className={!cat ? 'bg-clara-600 text-white border-clara-600' : 'bg-white'}>Todas</Badge>
+              <Badge className={!cat ? 'bg-aurora-600 text-white border-aurora-600' : 'bg-white'}>Todas</Badge>
             </Link>
             {CATEGORIAS.map((c) => (
               <Link key={c} href={`/blog?categoria=${encodeURIComponent(c)}`}>
-                <Badge className={cat === c ? 'bg-clara-600 text-white border-clara-600' : 'bg-white'}>{c}</Badge>
+                <Badge className={cat === c ? 'bg-aurora-600 text-white border-aurora-600' : 'bg-white'}>{c}</Badge>
               </Link>
             ))}
           </div>
@@ -58,7 +58,7 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
                 <CapaPost categoria={p.categoria} semente={p.slug} className="h-36" iconSize={40} />
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-1">
-                    <Badge className="bg-clara-50 text-clara-700 border-clara-200">{p.categoria}</Badge>
+                    <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{p.categoria}</Badge>
                     <span className="text-xs text-muted-foreground">{p.leituraMin} min</span>
                   </div>
                   <CardTitle className="text-lg leading-snug">{p.titulo}</CardTitle>

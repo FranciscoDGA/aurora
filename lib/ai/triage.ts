@@ -190,7 +190,7 @@ export function extrairDados(relato: string): Record<string, unknown> {
   if (cpf) dados.cpf_mencionado = true
   const filhos = relato.match(/(\d+)\s*filhos?/i)
   if (filhos) dados.qtd_filhos_mencionada = parseInt(filhos[1], 10)
-  const valor = relato.match(/R\$\s?([\d.,]+)/)
+  const valor = relato.match(/R\$\s?([\d.,]*\d)/)
   if (valor) dados.valor_mencionado = valor[1]
   const cidades = relato.match(/(São Paulo|Rio de Janeiro|Belo Horizonte|Salvador|Fortaleza|Recife|Porto Alegre|Curitiba|Goiânia|Brasília|Manaus|Belém)/i)
   if (cidades) dados.cidade_mencionada = cidades[1]

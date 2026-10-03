@@ -1,93 +1,130 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import { createHmac, timingSafeEqual } from 'crypto'
 
-// Cria o cliente do Supabase usando a service_role key para ter permissão de admin (burlar RLS) e poder atualizar os perfis
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+// Cliente admin (service_role): atualiza plano ignorando RLS.
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+  process.env.SUPABASE_SERVICE_ROLE_KEY || '',
+)
 
-const supabase = createClient(supabaseUrl, supabaseServiceKey)
+interface PayloadKiwify {
+  order_status?: string
+  Customer?: { email?: string }
+  customer?: { email?: string }
+  Product?: { product_name?: string }
+  product?: { product_name?: string }
+}
+
+// Kiwify aceita dois esquemas de segurança (configuráveis no painel de webhooks):
+// 1. Header estático `x-webhook-token` comparado com KIWIFY_WEBHOOK_TOKEN
+// 2. Header `x-kiwify-signature` = HMAC-SHA256 do corpo bruto com KIWIFY_WEBHOOK_SECRET
+function verificarAssinatura(body: string, req: Request): { ok: boolean; motivo: string } {
+  const token = process.env.KIWIFY_WEBHOOK_TOKEN
+  if (token) {
+    const recebido = req.headers.get('x-webhook-token')
+    if (!recebido) return { ok: false, motivo: 'x-webhook-token ausente' }
+    return recebido === token
+      ? { ok: true, motivo: 'token ok' }
+      : { ok: false, motivo: 'x-webhook-token inválido' }
+  }
+
+  const segredo = process.env.KIWIFY_WEBHOOK_SECRET
+  if (segredo) {
+    const recebido = req.headers.get('x-kiwify-signature')
+    if (!recebido) return { ok: false, motivo: 'x-kiwify-signature ausente' }
+    const esperado = createHmac('sha256', segredo).update(body).digest('hex')
+    const a = Buffer.from(esperado, 'utf8')
+    const b = Buffer.from(recebido, 'utf8')
+    if (a.length !== b.length || !timingSafeEqual(a, b)) {
+      return { ok: false, motivo: 'assinatura divergente' }
+    }
+    return { ok: true, motivo: 'hmac ok' }
+  }
+
+  // Nenhum segredo configurado: bloqueia em produção, permite em dev local.
+  if (process.env.VERCEL_ENV === 'production') {
+    return { ok: false, motivo: 'KIWIFY_WEBHOOK_TOKEN/SECRET não configurado' }
+  }
+  console.warn('[kiwify] webhook aceito sem segredo configurado (apenas fora de produção)')
+  return { ok: true, motivo: 'sem segredo (dev)' }
+}
+
+// Varre a paginação do Auth: listUsers() sem página acha só os primeiros registros.
+async function acharUsuarioPorEmail(
+  cliente: SupabaseClient,
+  email: string,
+): Promise<{ id: string } | null> {
+  const PAGINA_MAX = 20
+  for (let pagina = 1; pagina <= PAGINA_MAX; pagina++) {
+    const { data, error } = await cliente.auth.admin.listUsers({ page: pagina, perPage: 100 })
+    if (error) throw error
+    const achado = data.users.find((u) => (u.email ?? '').toLowerCase() === email)
+    if (achado) return { id: achado.id }
+    if (data.users.length < 100) break
+  }
+  return null
+}
+
+async function atualizarPlano(email: string, plano: string): Promise<NextResponse> {
+  const usuario = await acharUsuarioPorEmail(supabase, email)
+  if (!usuario) {
+    console.warn(`[kiwify] pagamento recebido para ${email}, mas o usuário não existe ainda`)
+    return NextResponse.json({ received: true, usuario: false }, { status: 200 })
+  }
+
+  const { error } = await supabase.from('perfis').update({ plano }).eq('id', usuario.id)
+  if (error) {
+    console.error('[kiwify] erro ao atualizar plano:', error.message)
+    return NextResponse.json({ error: 'Erro ao atualizar plano' }, { status: 500 })
+  }
+
+  console.log(`[kiwify] plano de ${email} atualizado para ${plano}`)
+  return NextResponse.json({ received: true, plano }, { status: 200 })
+}
 
 export async function POST(req: Request) {
   try {
-    // Kiwify envia os dados via form-data ou JSON. Vamos tentar pegar o texto primeiro
     const bodyText = await req.text()
-    
-    // Opcional: Validar o webhook signature da Kiwify para segurança
-    const kiwifySignature = req.headers.get('x-kiwify-signature')
-    // Se você configurou um Token de Webhook na Kiwify, deveria validar aqui.
-    
-    // Parseia o payload
-    let payload: any
-    try {
-      payload = JSON.parse(bodyText)
-    } catch {
-      // Se não for JSON, pode estar vindo como urlencoded (Kiwify manda urlencoded as vezes)
-      const params = new URLSearchParams(bodyText)
-      payload = Object.fromEntries(params.entries())
+
+    const verificacao = verificarAssinatura(bodyText, req)
+    if (!verificacao.ok) {
+      console.error(`[kiwify] entrega rejeitada: ${verificacao.motivo}`)
+      return NextResponse.json({ error: 'Assinatura inválida' }, { status: 401 })
     }
 
-    const { order_status, Customer, Product } = payload
+    let payload: PayloadKiwify
+    try {
+      payload = JSON.parse(bodyText) as PayloadKiwify
+    } catch {
+      // A Kiwify às vezes envia urlencoded
+      payload = Object.fromEntries(new URLSearchParams(bodyText)) as PayloadKiwify
+    }
 
-    // order_status da Kiwify pode ser: 'paid', 'refunded', 'chargedback', etc.
-    if (!order_status || !Customer || !Customer.email) {
+    const order_status = payload.order_status
+    const customer = payload.Customer ?? payload.customer
+    const product = payload.Product ?? payload.product
+
+    if (!order_status || !customer?.email) {
       return NextResponse.json({ error: 'Payload incompleto' }, { status: 400 })
     }
+    const email = customer.email.toLowerCase()
 
-    const email = Customer.email.toLowerCase()
-    
     if (order_status === 'paid') {
-      // Determina qual plano foi comprado através do nome do produto ou ID na Kiwify
-      // Ajuste os nomes de acordo com o que você criar na Kiwify
-      const productName = (Product?.product_name || '').toLowerCase()
-      
-      let novoPlano = 'clara_plus'
-      if (productName.includes('pro') || productName.includes('premium')) {
-        novoPlano = 'clara_pro'
-      }
+      const nomeProduto = (product?.product_name ?? '').toLowerCase()
+      const plano = nomeProduto.includes('pro') || nomeProduto.includes('premium')
+        ? 'aurora_pro'
+        : 'aurora_plus'
+      return await atualizarPlano(email, plano)
+    }
 
-      // Atualiza no Supabase baseado no e-mail do usuário
-      // Precisamos achar o usuário pelo e-mail (Supabase Auth) ou diretamente na tabela de perfis
-      
-      // Assumindo que a tabela de perfis tem um campo email ou que você busca o usuário na auth.users
-      // Como não temos acesso direto ao e-mail na tabela perfis (se ele ficar só no Auth), 
-      // precisamos de uma query. Se o e-mail não estiver em 'perfis', podemos buscar na auth:
-      
-      const { data: usersData, error: authError } = await supabase.auth.admin.listUsers()
-      if (authError) throw authError
-
-      const user = usersData.users.find(u => u.email === email)
-      
-      if (user) {
-        // Atualiza a tabela perfil com o novo plano
-        const { error: updateError } = await supabase
-          .from('perfis')
-          .update({ plano: novoPlano })
-          .eq('id', user.id)
-
-        if (updateError) {
-          console.error('Erro ao atualizar plano no Supabase:', updateError)
-          return NextResponse.json({ error: 'Erro ao atualizar BD' }, { status: 500 })
-        }
-        
-        console.log(`Sucesso: Plano de ${email} atualizado para ${novoPlano}`)
-      } else {
-        console.log(`Aviso: Pagamento recebido para ${email}, mas usuário não encontrado no banco.`)
-        // Opcional: Criar uma tabela "compras_pendentes" para vincular quando o usuário criar a conta.
-      }
-    } 
-    else if (order_status === 'refunded' || order_status === 'chargedback') {
-      // Se estornou, volta pro gratuito
-      const { data: usersData } = await supabase.auth.admin.listUsers()
-      const user = usersData?.users.find(u => u.email === email)
-      if (user) {
-        await supabase.from('perfis').update({ plano: 'gratuito' }).eq('id', user.id)
-      }
+    if (order_status === 'refunded' || order_status === 'chargedback') {
+      return await atualizarPlano(email, 'gratuito')
     }
 
     return NextResponse.json({ received: true }, { status: 200 })
-
   } catch (error) {
-    console.error('Webhook Error:', error)
+    console.error('[kiwify] erro no webhook:', error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }

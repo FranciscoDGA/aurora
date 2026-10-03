@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { POSTS } from '@/lib/blog'
 
-const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'https://clara-fldv.vercel.app'
+// Configure NEXT_PUBLIC_APP_URL no painel da Vercel (domínio real de produção).
+const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const estaticas = ['', '/triagem', '/blog', '/checklist', '/login', '/cadastro']

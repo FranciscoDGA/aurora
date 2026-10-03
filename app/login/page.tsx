@@ -33,16 +33,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen grid place-items-center bg-clara-50 px-4">
+    <div className="min-h-screen grid place-items-center bg-aurora-50 px-4">
       <Card className="w-full max-w-md">
-        <CardHeader><CardTitle>Entrar na Clara</CardTitle><CardDescription>Acesse seus casos e documentos.</CardDescription></CardHeader>
+        <CardHeader><CardTitle>Entrar na Aurora</CardTitle><CardDescription>Acesse seus casos e documentos.</CardDescription></CardHeader>
         <CardContent>
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="space-y-2"><Label htmlFor="email">E-mail</Label><Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="voce@email.com" /></div>
             <div className="space-y-2"><Label htmlFor="senha">Senha</Label><Input id="senha" type="password" required value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="••••••••" /></div>
             {erro && <p className="text-sm text-red-600">{erro}</p>}
             <Button className="w-full" disabled={loading}>{loading ? 'Entrando...' : 'Entrar'}</Button>
-            <p className="text-sm text-center text-muted-foreground">Sem conta? <Link href="/cadastro" className="text-clara-600 font-medium">Cadastre-se grátis</Link></p>
+            <p className="text-sm text-center text-muted-foreground">Sem conta? <Link href="/cadastro" className="text-aurora-600 font-medium">Cadastre-se grátis</Link></p>
           </form>
         </CardContent>
       </Card>

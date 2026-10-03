@@ -8,8 +8,12 @@ export async function POST(req: Request) {
   if (!user) return NextResponse.json({ error: 'Faça login para salvar o caso.' }, { status: 401 })
 
   const body = await req.json()
-  const relato = String(body?.relato ?? '')
-  const triagem = body?.triagem ?? triar(relato)
+  const relato = String(body?.relato ?? '').trim()
+  if (relato.length < 10) {
+    return NextResponse.json({ error: 'Relato muito curto. Descreva com mais detalhes.' }, { status: 400 })
+  }
+  // Sempre recalculado no servidor: a triagem enviada pelo cliente é ignorada.
+  const triagem = triar(relato)
 
   // Limite plano gratuito: 1 caso ativo
   const { data: perfil } = await supabase.from('perfis').select('plano').eq('id', user.id).single()
@@ -17,7 +21,7 @@ export async function POST(req: Request) {
     const { count } = await supabase.from('casos').select('id', { count: 'exact', head: true })
       .eq('usuario_id', user.id).not('status', 'in', '(concluido,arquivado)')
     if ((count ?? 0) >= 1) {
-      return NextResponse.json({ error: 'Plano gratuito permite 1 caso ativo. Conclua ou arquive o atual, ou assine Clara+.' }, { status: 402 })
+      return NextResponse.json({ error: 'Plano gratuito permite 1 caso ativo. Conclua ou arquive o atual, ou assine Aurora+.' }, { status: 402 })
     }
   }
 
@@ -32,7 +36,10 @@ export async function POST(req: Request) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  await supabase.from('logs_ia').insert({ caso_id: data.id, etapa: 'triagem', tokens_estimados: triagem.tokens_estimados ?? 0 })
+  const { error: errLog } = await supabase
+    .from('logs_ia')
+    .insert({ caso_id: data.id, etapa: 'triagem', tokens_estimados: triagem.tokens_estimados ?? 0 })
+  if (errLog) console.error('Falha ao registrar log de IA:', errLog.message)
 
   return NextResponse.json({ id: data.id }, { status: 201 })
 }

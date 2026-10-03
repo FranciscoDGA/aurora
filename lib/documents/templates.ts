@@ -56,7 +56,7 @@ d) Produção de provas.
 
 ${comarca}, ${new Date().toLocaleDateString('pt-BR')}.
 
-⚠️ Documento gerado pela Clara como BASE. Leve à Defensoria Pública ou advogada para revisão antes de protocolar. Não substitui orientação jurídica individual.`
+⚠️ Documento gerado pela Aurora como BASE. Leve à Defensoria Pública ou advogada para revisão antes de protocolar. Não substitui orientação jurídica individual.`
 
       return { markdown, faltantes: f }
     },
@@ -187,7 +187,7 @@ PRÓXIMOS PASSOS:
 
 🚨 Em risco agora? Ligue 180 ou 190.
 
-⚠️ Documento gerado pela Clara como BASE. Não substitui orientação jurídica individual.`
+⚠️ Documento gerado pela Aurora como BASE. Não substitui orientação jurídica individual.`
       return { markdown, faltantes: f }
     },
   },
@@ -249,7 +249,7 @@ e) Gratuidade da justiça (art. 98, CPC).
 
 ${comarca}, ${new Date().toLocaleDateString('pt-BR')}.
 
-⚠️ Documento gerado pela Clara como BASE. Leve à Defensoria Pública ou advogada para revisão.`
+⚠️ Documento gerado pela Aurora como BASE. Leve à Defensoria Pública ou advogada para revisão.`
       return { markdown, faltantes: f }
     },
   },
@@ -300,7 +300,7 @@ PROVAS: guarde prints, e-mails, áudios, testemunhas, avaliações. Não apague 
 
 ⚠️ Assédio sexual no trabalho pode gerar rescisão indireta (saída com todos os direitos) + dano moral. Procure advogada trabalhista/Defensoria.
 
-Documento-base gerado pela Clara. Não substitui orientação jurídica individual.`
+Documento-base gerado pela Aurora. Não substitui orientação jurídica individual.`
       return { markdown, faltantes: f }
     },
   },
@@ -348,7 +348,7 @@ c) Horas extras / diferenças, se houver;
 d) Dano moral, se cabível;
 e) Gratuidade da justiça.
 
-⚠️ Base gerada pela Clara. Leve à Defensoria/sindicato/advogada trabalhista com CTPS, contracheques e provas.`
+⚠️ Base gerada pela Aurora. Leve à Defensoria/sindicato/advogada trabalhista com CTPS, contracheques e provas.`
       return { markdown, faltantes: f }
     },
   },
@@ -368,7 +368,7 @@ SE FOI DEMITIDA:
 2. Peça reintegração OU indenização do período (salários + direitos);
 3. Prazo: entre com reclamatória o quanto antes.
 
-⚠️ Leve à Defensoria/sindicato com urgência. Base gerada pela Clara.`
+⚠️ Leve à Defensoria/sindicato com urgência. Base gerada pela Aurora.`
       return { markdown, faltantes: f }
     },
   },
@@ -395,7 +395,7 @@ d) Gratuidade da justiça.
 
 Anexos: extrato Serasa/SPC + comprovante da negativação + RG/CPF + comprovante de endereço.
 
-⚠️ Base gerada pela Clara. Leve à Defensoria/Juizado Especial Cível.`
+⚠️ Base gerada pela Aurora. Leve à Defensoria/Juizado Especial Cível.`
       return { markdown, faltantes: f }
     },
   },
@@ -417,7 +417,7 @@ VALORES (referência jurisprudencial, variam por caso):
 - Nome sujo indevido: R$ 5k–15k;
 - Assédio comprovado: conforme gravidade e porte da empresa.
 
-⚠️ Juizado Especial Cível aceita causas até 40 salários-mínimos sem advogado (até 20 sem advogado). Base gerada pela Clara.`,
+⚠️ Juizado Especial Cível aceita causas até 40 salários-mínimos sem advogado (até 20 sem advogado). Base gerada pela Aurora.`,
       faltantes: [],
     }),
   },
@@ -440,7 +440,7 @@ PRAZO: abrir em 60 dias do óbito (multa ITCMD após).
 Se TODOS concordam e não há menores: faça em CARTÓRIO (mais rápido e barato).
 Se há briga ou menor: judicial, com nomeação de inventariante.
 
-⚠️ Base gerada pela Clara. Leve à Defensoria/advogada com certidão de óbito + docs de herdeiros e bens.`
+⚠️ Base gerada pela Aurora. Leve à Defensoria/advogada com certidão de óbito + docs de herdeiros e bens.`
       return { markdown, faltantes: f }
     },
   },
@@ -462,7 +462,7 @@ Declara compromisso de bem exercer o encargo.
 
 Assinatura: ______________________
 
-⚠️ Base gerada pela Clara. Leve à Defensoria/advogada.`
+⚠️ Base gerada pela Aurora. Leve à Defensoria/advogada.`
       return { markdown, faltantes: f }
     },
   },

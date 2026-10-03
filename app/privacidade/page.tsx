@@ -2,13 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Política de Privacidade | Clara',
-  description: 'Saiba como a Clara coleta, utiliza e protege os seus dados pessoais, em conformidade com a LGPD.',
+  title: 'Política de Privacidade | Aurora',
+  description: 'Saiba como a Aurora coleta, utiliza e protege os seus dados pessoais, em conformidade com a LGPD.',
 }
 
 export default function PrivacidadePage() {
   return (
-    <div className="min-h-screen bg-clara-50 px-4 py-16">
+    <div className="min-h-screen bg-aurora-50 px-4 py-16">
       <div className="mx-auto max-w-4xl space-y-10">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900">Política de Privacidade</h1>
@@ -26,7 +26,7 @@ export default function PrivacidadePage() {
             },
             {
               t: '2. Para que usamos os seus dados',
-              d: 'Utilizamos seus dados exclusivamente para prestar o serviço oferecido (triagem inteligente, geração de documentos e acompanhamento). Em hipótese alguma a Clara vende, aluga ou monetiza seus dados pessoais com terceiros.'
+              d: 'Utilizamos seus dados exclusivamente para prestar o serviço oferecido (triagem inteligente, geração de documentos e acompanhamento). Em hipótese alguma a Aurora vende, aluga ou monetiza seus dados pessoais com terceiros.'
             },
             {
               t: '3. Isolamento rigoroso (Ninguém lê seu caso)',
@@ -38,11 +38,11 @@ export default function PrivacidadePage() {
             },
             {
               t: '5. Os seus direitos (LGPD)',
-              d: 'Você é dona dos seus dados. A qualquer momento, você pode solicitar a confirmação, o acesso, a correção ou a exclusão total e irrecuperável da sua conta e dos seus relatos enviando um e-mail para oi@clara.direito.br.'
+              d: 'Você é dona dos seus dados. A qualquer momento, você pode solicitar a confirmação, o acesso, a correção ou a exclusão total e irrecuperável da sua conta e dos seus relatos enviando um e-mail para oi@aurora.direito.br.'
             },
             {
               t: '6. Segurança e Criptografia',
-              d: 'Toda a comunicação com a Clara é feita sob conexões criptografadas de ponta a ponta (HTTPS). Nossos bancos de dados seguem rígidos padrões internacionais de proteção.'
+              d: 'Toda a comunicação com a Aurora é feita sob conexões criptografadas de ponta a ponta (HTTPS). Nossos bancos de dados seguem rígidos padrões internacionais de proteção.'
             }
           ].map((s) => (
             <Card key={s.t} className="border-0 shadow-sm bg-white">
@@ -54,7 +54,7 @@ export default function PrivacidadePage() {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Dúvidas sobre o tratamento dos seus dados?</p>
-          <Link href="/contato" className="text-clara-600 font-semibold hover:underline">
+          <Link href="/contato" className="text-aurora-600 font-semibold hover:underline">
             Fale com a nossa equipe de privacidade
           </Link>
         </div>

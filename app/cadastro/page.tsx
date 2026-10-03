@@ -43,7 +43,7 @@ export default function CadastroPage() {
   }
 
   return (
-    <div className="min-h-screen grid place-items-center bg-clara-50 px-4">
+    <div className="min-h-screen grid place-items-center bg-aurora-50 px-4">
       <Card className="w-full max-w-md">
         <CardHeader><CardTitle>Criar conta grátis</CardTitle><CardDescription>1 caso ativo, 2 documentos/mês, sem cartão.</CardDescription></CardHeader>
         <CardContent>
@@ -54,7 +54,7 @@ export default function CadastroPage() {
             {erro && <p className="text-sm text-red-600">{erro}</p>}
             {ok && <p className="text-sm text-green-700">{ok}</p>}
             <Button className="w-full" disabled={loading}>{loading ? 'Criando...' : 'Criar conta'}</Button>
-            <p className="text-sm text-center text-muted-foreground">Já tem conta? <Link href="/login" className="text-clara-600 font-medium">Entrar</Link></p>
+            <p className="text-sm text-center text-muted-foreground">Já tem conta? <Link href="/login" className="text-aurora-600 font-medium">Entrar</Link></p>
           </form>
         </CardContent>
       </Card>

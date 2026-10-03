@@ -57,7 +57,7 @@ export const POSTS_A: Post[] = [
 <p><strong>Ele está desempregado. Ainda devo pedir?</strong> Sim. Desemprego reduz, mas raramente zera: o juiz pode fixar em percentual do salário-mínimo e rever quando ele voltar a trabalhar.</p>
 <p><strong>Posso pedir aumento depois?</strong> Sim: ação revisional, provando que os gastos subiram ou a renda dele melhorou. E ele pode pedir redução provando queda real de renda.</p>
 <p><strong>Filho maior perde a pensão?</strong> Não automaticamente: se estuda ou não se sustenta, mantém-se. A exoneração precisa de decisão judicial.</p>
-<p>Quer transformar esse passo a passo no seu caso concreto? Faça a <a href="/triagem">triagem gratuita da Clara</a>: conte sua história e receba a petição-base com pedido de provisórios, pronta para levar à Defensoria.</p>`,
+<p>Quer transformar esse passo a passo no seu caso concreto? Faça a <a href="/triagem">triagem gratuita da Aurora</a>: conte sua história e receba a petição-base com pedido de provisórios, pronta para levar à Defensoria.</p>`,
   },
   {
     slug: 'guarda-compartilhada-como-funciona',
@@ -86,7 +86,7 @@ export const POSTS_A: Post[] = [
 <ol>
 <li>Defina sua proposta por escrito: residência base, rotina, férias, decisões conjuntas;</li>
 <li>Junte certidões de nascimento, comprovante de endereço e provas de impedimento (se houver);</li>
-<li>Leve à <a href="/checklist">Defensoria Pública</a> ou gere a base do pedido na <a href="/triagem">triagem da Clara</a>;</li>
+<li>Leve à <a href="/checklist">Defensoria Pública</a> ou gere a base do pedido na <a href="/triagem">triagem da Aurora</a>;</li>
 <li>Na audiência, mostre disponibilidade e foco na criança — juízes decidem pelo melhor interesse dela, não pela briga dos adultos.</li>
 </ol>
 <h2>Perguntas frequentes</h2>
@@ -156,7 +156,7 @@ export const POSTS_A: Post[] = [
 <p><strong>Preciso de advogado?</strong> Não para pedir. Para acompanhar o processo criminal depois, Defensoria ou advogada ajudam muito.</p>
 <p><strong>Ele pode ser preso por descumprir?</strong> Sim: descumprimento é crime autônomo e pode gerar prisão preventiva.</p>
 <p><strong>A medida tem prazo?</strong> Vale enquanto persistir o risco; pode ser prorrogada e revista. Não “caduca” sozinha sem avaliação.</p>
-<p>Quer o pedido pronto para levar? Faça a <a href="/triagem?urgente=1">triagem urgente da Clara</a> e gere a base em minutos. Veja também <a href="/blog/como-fazer-boletim-de-ocorrencia">como fazer BO</a>.</p>`,
+<p>Quer o pedido pronto para levar? Faça a <a href="/triagem?urgente=1">triagem urgente da Aurora</a> e gere a base em minutos. Veja também <a href="/blog/como-fazer-boletim-de-ocorrencia">como fazer BO</a>.</p>`,
   },
   {
     slug: 'divorcio-consensual-ou-litigioso',
@@ -202,7 +202,7 @@ export const POSTS_A: Post[] = [
 <p><strong>Ele sumiu. Consigo me divorciar?</strong> Sim: citação por edital e curador especial; o processo anda mesmo sem ele.</p>
 <p><strong>Preciso esperar algum prazo?</strong> Não. Divórcio direto, a qualquer tempo.</p>
 <p><strong>Volto a usar nome de solteira?</strong> Você escolhe na hora: manter ou retomar. Decida com calma — trocar depois exige nova ação.</p>
-<p>Defina seu caminho na <a href="/triagem">triagem gratuita da Clara</a>: conte se há acordo ou briga e receba a petição-base pronta para a Defensoria.</p>`,
+<p>Defina seu caminho na <a href="/triagem">triagem gratuita da Aurora</a>: conte se há acordo ou briga e receba a petição-base pronta para a Defensoria.</p>`,
   },
   {
     slug: 'tipos-de-violencia-domestica-lei-maria-da-penha',
@@ -239,6 +239,6 @@ export const POSTS_A: Post[] = [
 <p><strong>Sofri violência há meses. Ainda posso denunciar?</strong> Sim. Não há prazo curto para a maioria desses crimes, e o histórico sustenta a medida atual.</p>
 <p><strong>Ele é policial/militar/influente. Adianta?</strong> Sim: a lei vale para todos, e o descumprimento por agente público agrava a situação dele. Procure DDM, Ministério Público ou Defensoria.</p>
 <p><strong>Quero denunciar mas dependo dele financeiramente. E agora?</strong> Peça alimentos provisórios junto com a medida e procure CRAS/CREAS para benefícios e acolhimento. Dependência financeira é parte da violência patrimonial — e tem remédio jurídico.</p>
-<p>Se identificou sua história aqui, faça a <a href="/triagem?urgente=1">triagem urgente</a>: a Clara ajuda a organizar os fatos e gerar o pedido de proteção.</p>`,
+<p>Se identificou sua história aqui, faça a <a href="/triagem?urgente=1">triagem urgente</a>: a Aurora ajuda a organizar os fatos e gerar o pedido de proteção.</p>`,
   },
 ]

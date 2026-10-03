@@ -43,7 +43,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        clara: {
+        aurora: {
           50: '#fdf2f8',
           100: '#fce7f3',
           200: '#fbcfe8',

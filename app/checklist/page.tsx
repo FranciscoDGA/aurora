@@ -10,7 +10,7 @@ type UF = keyof typeof defensoriaData
 const CHECKLIST = [
   'Reúna RG, CPF e comprovante de residência (originais + cópias).',
   'Junte as provas: prints, fotos, áudios, testemunhas, BO se houver.',
-  'Leve os documentos gerados pela Clara impressos ou em PDF.',
+  'Leve os documentos gerados pela Aurora impressos ou em PDF.',
   'Vá à Defensoria Pública ou Vara de Família no horário de atendimento.',
   'Protocole e anote o número do processo + próxima data.',
 ]
@@ -20,9 +20,9 @@ export default function ChecklistPage() {
   const dados = defensoriaData[estado]
 
   return (
-    <div className="min-h-screen bg-clara-50 px-4 py-10">
+    <div className="min-h-screen bg-aurora-50 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
-        <Card className="bg-clara-900 text-white border-0">
+        <Card className="bg-aurora-900 text-white border-0">
           <CardContent className="p-6">
             <p className="font-bold">Em risco agora? Ligue 180 (Central da Mulher) ou 190 (emergência).</p>
           </CardContent>
