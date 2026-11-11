@@ -10,7 +10,7 @@ type UF = keyof typeof defensoriaData
 const CHECKLIST = [
   'Reúna RG, CPF e comprovante de residência (originais + cópias).',
   'Junte as provas: prints, fotos, áudios, testemunhas, BO se houver.',
-  'Leve os documentos gerados pela Aurora impressos ou em PDF.',
+  'Leve os documentos gerados pelo Guia Clara impressos ou em PDF.',
   'Vá à Defensoria Pública ou Vara de Família no horário de atendimento.',
   'Protocole e anote o número do processo + próxima data.',
 ]

@@ -8,7 +8,7 @@ import { POSTS } from '@/lib/blog'
 import { CATEGORIAS, getAllPosts } from '@/lib/blog/types'
 
 export const metadata = {
-  title: 'Blog — Direitos da mulher explicados sem juridiquês | Aurora',
+  title: 'Blog — Direitos da mulher explicados sem juridiquês | Guia Clara',
   description: 'Guias práticos sobre pensão, guarda, divórcio, medida protetiva, direitos da gestante e mais. Conteúdo gratuito e atualizado.',
 }
 
@@ -23,7 +23,7 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
         <div className="mx-auto max-w-5xl px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
-            Aurora
+            Guia Clara
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/"><Button variant="ghost" size="sm">Início</Button></Link>
@@ -34,10 +34,10 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
       <div className="px-4 py-10">
       <div className="mx-auto max-w-5xl space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Blog da Aurora</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Blog do Guia Clara</h1>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Direitos da mulher explicados sem juridiquês: pensão, guarda, divórcio, medida protetiva,
-            trabalho e consumo. Leia e, se precisar, gere seus documentos.
+            trabalho e consumo. Leia e, se precisar, gere seus documentos com a Clara.
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-2">
             <Link href="/blog">

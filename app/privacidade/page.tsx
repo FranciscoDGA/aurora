@@ -2,8 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Política de Privacidade | Aurora',
-  description: 'Saiba como a Aurora coleta, utiliza e protege os seus dados pessoais, em conformidade com a LGPD.',
+  title: 'Política de Privacidade | Guia Clara',
+  description: 'Saiba como o Guia Clara coleta, utiliza e protege os seus dados pessoais, em conformidade com a LGPD.',
 }
 
 export default function PrivacidadePage() {
@@ -26,7 +26,7 @@ export default function PrivacidadePage() {
             },
             {
               t: '2. Para que usamos os seus dados',
-              d: 'Utilizamos seus dados exclusivamente para prestar o serviço oferecido (triagem inteligente, geração de documentos e acompanhamento). Em hipótese alguma a Aurora vende, aluga ou monetiza seus dados pessoais com terceiros.'
+              d: 'Utilizamos seus dados exclusivamente para prestar o serviço oferecido (triagem inteligente, geração de documentos e acompanhamento). Em hipótese alguma o Guia Clara vende, aluga ou monetiza seus dados pessoais com terceiros.'
             },
             {
               t: '3. Isolamento rigoroso (Ninguém lê seu caso)',
@@ -38,11 +38,11 @@ export default function PrivacidadePage() {
             },
             {
               t: '5. Os seus direitos (LGPD)',
-              d: 'Você é dona dos seus dados. A qualquer momento, você pode solicitar a confirmação, o acesso, a correção ou a exclusão total e irrecuperável da sua conta e dos seus relatos enviando um e-mail para oi@aurora.direito.br.'
+              d: 'Você é dona dos seus dados. A qualquer momento, você pode solicitar a confirmação, o acesso, a correção ou a exclusão total e irrecuperável da sua conta e dos seus relatos enviando um e-mail para contato@guiaclara.com.br.'
             },
             {
               t: '6. Segurança e Criptografia',
-              d: 'Toda a comunicação com a Aurora é feita sob conexões criptografadas de ponta a ponta (HTTPS). Nossos bancos de dados seguem rígidos padrões internacionais de proteção.'
+              d: 'Toda a comunicação com o Guia Clara é feita sob conexões criptografadas de ponta a ponta (HTTPS). Nossos bancos de dados seguem rígidos padrões internacionais de proteção.'
             }
           ].map((s) => (
             <Card key={s.t} className="border-0 shadow-sm bg-white">

@@ -11,17 +11,17 @@ import {
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''
 const WA_LINK = WHATSAPP
-  ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Aurora! Preciso de ajuda com um caso.')}`
+  ? `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Clara! Preciso de ajuda com um caso.')}`
   : ''
 
 const PASSOS = [
   { icon: <MessageCircle className="text-aurora-600" />, t: '1. Você conta', d: 'Descreva com suas palavras, por texto ou áudio. Sem juridiquês, sem julgamento.' },
-  { icon: <FileText className="text-aurora-600" />, t: '2. Aurora gera', d: 'Petição inicial, alimentos provisórios, medida protetiva, gratuidade — prontos em PDF.' },
+  { icon: <FileText className="text-aurora-600" />, t: '2. Clara gera', d: 'Petição inicial, alimentos provisórios, medida protetiva, gratuidade — prontos em PDF.' },
   { icon: <ShieldCheck className="text-aurora-600" />, t: '3. Você protocola', d: 'Checklist + endereços da Defensoria/Vara para levar tudo pronto e não voltar pra casa de mãos vazias.' },
 ]
 
 const DIFERENCIAIS = [
-  { t: 'Sem advogado para começar', d: 'Você não precisa pagar consulta nem conhecer ninguém da área. A Aurora traduz sua história em peças jurídicas.' },
+  { t: 'Sem advogado para começar', d: 'Você não precisa pagar consulta nem conhecer ninguém da área. O Guia Clara traduz sua história em peças jurídicas.' },
   { t: 'Minutos, não meses', d: 'Triagem gratuita na hora e documentos gerados no mesmo dia. O sistema anda devagar — você não precisa.' },
   { t: 'Grátis para começar', d: '1 caso ativo e 2 documentos por mês sem cartão. Só pague se precisar de mais.' },
   { t: 'Feita para mulheres', d: 'Linguagem simples, acolhimento e foco nos casos que mais atingem mulheres: família, violência e trabalho.' },
@@ -41,18 +41,18 @@ const PLANOS: Array<{ id: keyof typeof PLANO_LABELS; preco: string; destaque?: s
 ]
 
 const FAQ = [
-  { q: 'Preciso de advogado para usar a Aurora?', a: 'Não para começar. A Aurora gera documentos-base e o passo a passo. Para protocolar, você leva tudo à Defensoria Pública (gratuita) ou a uma advogada, que revisa e assina com você.' },
+  { q: 'Preciso de advogado para usar o Guia Clara?', a: 'Não para começar. O Guia Clara gera documentos-base e o passo a passo. Para protocolar, você leva tudo à Defensoria Pública (gratuita) ou a uma advogada, que revisa e assina com você.' },
   { q: 'Os documentos valem no fórum?', a: 'São peças-base no formato usado na prática (fundamentação + pedidos). Elas precisam de revisão da Defensoria/advogada antes do protocolo — por isso cada documento sai com checklist do que falta preencher.' },
   { q: 'É grátis mesmo?', a: 'Sim: triagem ilimitada, 1 caso ativo e 2 documentos por mês, sem cartão. Os planos pagos liberam casos e documentos ilimitados.' },
   { q: 'Meus dados estão seguros?', a: 'Cada usuária só acessa os próprios casos (isolamento por login + políticas de segurança no banco). Nunca compartilhamos seu relato.' },
-  { q: 'Estou em risco agora. O que faço?', a: 'Ligue 180 (Central da Mulher) ou 190 (emergência) antes de qualquer documento. Depois a Aurora ajuda com o plano de saída e a medida protetiva.' },
+  { q: 'Estou em risco agora. O que faço?', a: 'Ligue 180 (Central da Mulher) ou 190 (emergência) antes de qualquer documento. Depois o Guia Clara ajuda com o plano de saída e a medida protetiva.' },
   { q: 'Serve para o meu estado?', a: 'As ações seguem lei federal (válida no Brasil todo). A página de checklist traz endereços da Defensoria de SP e RJ — e cresce para outros estados.' },
 ]
 
 // NOTA: depoimentos ilustrativos — trocar por casos reais autorizados assim que houver.
 const DEPOIMENTOS = [
   { nome: 'M., São Paulo', caso: 'Pensão alimentícia', texto: 'Ele estava há 5 meses sem pagar. Em uma noite gerei a petição e na semana seguinte já tinha protocolo na Defensoria.' },
-  { nome: 'R., Rio de Janeiro', caso: 'Medida protetiva', texto: 'Eu não sabia nem o que pedir. A Aurora me deu as palavras e o documento. Foi o empurrão que faltava.' },
+  { nome: 'R., Rio de Janeiro', caso: 'Medida protetiva', texto: 'Eu não sabia nem o que pedir. A Clara me deu as palavras e o documento. Foi o empurrão que faltava.' },
   { nome: 'J., Belo Horizonte', caso: 'Divórcio consensual', texto: 'Conseguimos entrar em acordo e a partilha saiu pronta. Economizamos meses de briga e dinheiro.' },
 ]
 
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
-            Aurora
+            Guia Clara
           </Link>
           <nav className="hidden md:flex items-center gap-5 text-sm text-muted-foreground">
             <a href="#como-funciona" className="hover:text-aurora-700">Como funciona</a>
@@ -98,7 +98,7 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
             Divórcio, pensão, guarda, medida protetiva. Conte sua história no WhatsApp ou aqui —
-            a Aurora entende, gera os documentos e te diz o passo a passo exato.
+            a Clara entende, gera os documentos e te diz o passo a passo exato.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/triagem"><Button size="lg">Fazer triagem gratuita</Button></Link>
@@ -128,10 +128,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* POR QUE A AURORA */}
+        {/* POR QUE O GUIA CLARA */}
         <section className="pb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center">Por que a Aurora?</h2>
-          <p className="text-center text-muted-foreground mt-2 mb-8">O caminho tradicional é caro, lento e confuso. A Aurora é o atalho.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center">Por que o Guia Clara?</h2>
+          <p className="text-center text-muted-foreground mt-2 mb-8">O caminho tradicional é caro, lento e confuso. O Guia Clara é o atalho.</p>
           <div className="grid sm:grid-cols-2 gap-4">
             {DIFERENCIAIS.map((d) => (
               <Card key={d.t}>
@@ -146,7 +146,7 @@ export default function Home() {
 
         {/* PARA QUEM */}
         <section id="para-quem" className="pb-16 scroll-mt-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-center">Para quem é a Aurora?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center">Para quem é o Guia Clara?</h2>
           <p className="text-center text-muted-foreground mt-2 mb-8">Se você vive uma destas situações, comece pela triagem gratuita.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PERSONAS.map((p) => (
@@ -248,7 +248,7 @@ export default function Home() {
             <CardContent className="p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold">Em risco agora?</h2>
-                <p className="mt-2 text-white/80">Ligue <b>180</b> (Central da Mulher) ou <b>190</b> (emergência). A Aurora ajuda com o plano de saída e a medida protetiva depois.</p>
+                <p className="mt-2 text-white/80">Ligue <b>180</b> (Central da Mulher) ou <b>190</b> (emergência). O Guia Clara ajuda com o plano de saída e a medida protetiva depois.</p>
               </div>
               <Link href="/triagem?urgente=1" className="shrink-0"><Button size="lg" variant="secondary"><Clock size={18} /> Pedir medida protetiva</Button></Link>
             </CardContent>
@@ -268,7 +268,7 @@ export default function Home() {
             )}
           </div>
           <p className="mt-6 text-xs text-muted-foreground max-w-3xl mx-auto">
-            Aviso legal: a Aurora gera documentos-base para levar à Defensoria Pública ou advogada. Não substitui orientação jurídica individual nem atendimento emergencial.
+            Aviso legal: o Guia Clara gera documentos-base para levar à Defensoria Pública ou advogada. Não substitui orientação jurídica individual nem atendimento emergencial.
           </p>
         </section>
       </main>
@@ -276,7 +276,7 @@ export default function Home() {
       <footer className="border-t py-10">
         <div className="mx-auto max-w-6xl px-4 grid gap-8 md:grid-cols-4 text-sm">
           <div>
-            <p className="flex items-center gap-2 font-bold text-base"><span className="grid place-items-center w-7 h-7 rounded-lg bg-aurora-600 text-white"><Scale size={16} /></span>Aurora</p>
+            <p className="flex items-center gap-2 font-bold text-base"><span className="grid place-items-center w-7 h-7 rounded-lg bg-aurora-600 text-white"><Scale size={16} /></span>Guia Clara</p>
             <p className="mt-2 text-muted-foreground">Seus direitos, claros. Navegadora de direitos da mulher.</p>
           </div>
           <div>
@@ -307,7 +307,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <p className="mt-8 text-center text-sm text-muted-foreground">Aurora © 2026 • Feito para mulheres • <Link href="/privacidade" className="underline hover:text-aurora-700">Privacidade (LGPD)</Link> • <Link href="/termos-de-uso" className="underline hover:text-aurora-700">Termos de Uso</Link></p>
+        <p className="mt-8 text-center text-sm text-muted-foreground">Guia Clara © 2026 • Feito para mulheres • <Link href="/privacidade" className="underline hover:text-aurora-700">Privacidade (LGPD)</Link> • <Link href="/termos-de-uso" className="underline hover:text-aurora-700">Termos de Uso</Link></p>
       </footer>
 
       {/* WhatsApp flutuante — só aparece quando o número oficial está configurado */}

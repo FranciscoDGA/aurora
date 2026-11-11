@@ -25,7 +25,7 @@ export default async function DashboardPage() {
     <div className="min-h-screen bg-aurora-50">
       <header className="border-b bg-white">
         <div className="mx-auto max-w-5xl px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="font-bold text-xl text-aurora-700">Aurora</Link>
+          <Link href="/" className="font-bold text-xl text-aurora-700">Guia Clara</Link>
           <div className="flex items-center gap-2">
             <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{perfil?.plano ?? 'gratuito'}</Badge>
             <span className="text-sm text-muted-foreground hidden sm:inline">{perfil?.nome ?? user.email}</span>

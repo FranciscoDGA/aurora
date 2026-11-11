@@ -16,7 +16,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPost(POSTS, params.slug)
   if (!post) return {}
   return {
-    title: `${post.titulo} | Blog da Aurora`,
+    title: `${post.titulo} | Blog do Guia Clara`,
     description: post.descricao,
     openGraph: { title: post.titulo, description: post.descricao, type: 'article' },
   }
@@ -33,7 +33,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     headline: post.titulo,
     description: post.descricao,
     datePublished: post.data,
-    author: { '@type': 'Organization', name: 'Aurora — Seus Direitos, Claros' },
+    author: { '@type': 'Organization', name: 'Guia Clara — Seus Direitos, Claros' },
     inLanguage: 'pt-BR',
   }
 
@@ -44,7 +44,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <div className="mx-auto max-w-3xl px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
-            Aurora
+            Guia Clara
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/blog"><Button variant="ghost" size="sm">← Blog</Button></Link>
@@ -78,7 +78,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
         <p className="mt-6 text-xs text-muted-foreground">
           Aviso: conteúdo informativo e geral, não substitui orientação jurídica individual. Para o seu caso,
-          leve os documentos gerados pela Aurora à Defensoria Pública ou advogada.
+          leve os documentos gerados pelo Guia Clara à Defensoria Pública ou advogada.
         </p>
 
         {relacionados.length > 0 && (

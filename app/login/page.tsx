@@ -35,7 +35,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen grid place-items-center bg-aurora-50 px-4">
       <Card className="w-full max-w-md">
-        <CardHeader><CardTitle>Entrar na Aurora</CardTitle><CardDescription>Acesse seus casos e documentos.</CardDescription></CardHeader>
+        <CardHeader><CardTitle>Entrar no Guia Clara</CardTitle><CardDescription>Acesse seus casos e documentos.</CardDescription></CardHeader>
         <CardContent>
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="space-y-2"><Label htmlFor="email">E-mail</Label><Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="voce@email.com" /></div>

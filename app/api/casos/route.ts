@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const { count } = await supabase.from('casos').select('id', { count: 'exact', head: true })
       .eq('usuario_id', user.id).not('status', 'in', '(concluido,arquivado)')
     if ((count ?? 0) >= 1) {
-      return NextResponse.json({ error: 'Plano gratuito permite 1 caso ativo. Conclua ou arquive o atual, ou assine Aurora+.' }, { status: 402 })
+      return NextResponse.json({ error: 'Plano gratuito permite 1 caso ativo. Conclua ou arquive o atual, ou assine o plano Clara+.' }, { status: 402 })
     }
   }
 

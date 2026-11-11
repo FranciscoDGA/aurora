@@ -80,11 +80,19 @@ export const PLANO_LABELS: Record<string, { label: string; features: string[] }>
     features: ['1 caso ativo', '2 documentos/mês', 'Orientação básica', 'Suporte comunitário'],
   },
   'aurora_plus': {
-    label: 'Aurora+',
+    label: 'Clara+',
     features: ['Casos ilimitados', 'Todos os documentos', 'Alertas de prazo', 'Suporte prioritário', 'R$ 29,90/mês'],
   },
   'aurora_pro': {
-    label: 'Aurora Pro',
-    features: ['Tudo do Aurora+', 'Advogada parceira (1h/mês)', 'Certidões automáticas', 'R$ 79,90/mês'],
+    label: 'Clara Pro',
+    features: ['Tudo do Clara+', 'Advogada parceira (1h/mês)', 'Certidões automáticas', 'R$ 79,90/mês'],
+  },
+  'clara_plus': {
+    label: 'Clara+',
+    features: ['Casos ilimitados', 'Todos os documentos', 'Alertas de prazo', 'Suporte prioritário', 'R$ 29,90/mês'],
+  },
+  'clara_pro': {
+    label: 'Clara Pro',
+    features: ['Tudo do Clara+', 'Advogada parceira (1h/mês)', 'Certidões automáticas', 'R$ 79,90/mês'],
   },
 }

@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Mail, MessageCircle, AlertTriangle, Users } from 'lucide-react'
 
 export const metadata = {
-  title: 'Contato | Aurora',
-  description: 'Fale com a equipe da Aurora para tirar dúvidas, sugerir melhorias ou propor parcerias.',
+  title: 'Contato | Guia Clara',
+  description: 'Fale com a equipe do Guia Clara para tirar dúvidas, sugerir melhorias ou propor parcerias.',
 }
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''
@@ -50,7 +50,7 @@ export default function ContatoPage() {
             <CardContent className="space-y-4 text-neutral-700">
               <p>Prefere e-mail ou quer tratar sobre cancelamentos, estornos e LGPD? Escreva para nós. Respondemos em até 24 horas úteis.</p>
               <div className="bg-neutral-100 p-3 rounded-md">
-                <strong className="text-neutral-900">oi@aurora.direito.br</strong>
+                <strong className="text-neutral-900">contato@guiaclara.com.br</strong>
               </div>
             </CardContent>
           </Card>
@@ -63,7 +63,7 @@ export default function ContatoPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-neutral-700">
-              <p>Trabalha em Defensorias, ONGs, coletivos femininos ou escritórios e quer levar a Aurora para mais mulheres? Nós adoraríamos conversar! Envie um e-mail para <strong>oi@aurora.direito.br</strong> com o assunto &ldquo;Parceria Institucional&rdquo;.</p>
+              <p>Trabalha em Defensorias, ONGs, coletivos femininos ou escritórios e quer levar o Guia Clara para mais mulheres? Nós adoraríamos conversar! Envie um e-mail para <strong>contato@guiaclara.com.br</strong> com o assunto &ldquo;Parceria Institucional&rdquo;.</p>
             </CardContent>
           </Card>
         </div>
@@ -73,7 +73,7 @@ export default function ContatoPage() {
           <div>
             <h3 className="font-bold text-lg mb-1">Situação de Emergência?</h3>
             <p className="text-rose-800 leading-relaxed">
-              A Aurora não é um canal de emergência ou denúncia ativa. Se você está correndo risco agora mesmo, ligue imediatamente para <strong>190</strong> (Polícia Militar) ou <strong>180</strong> (Central de Atendimento à Mulher). Sua vida e segurança vêm em primeiro lugar.
+              O Guia Clara não é um canal de emergência ou denúncia ativa. Se você está correndo risco agora mesmo, ligue imediatamente para <strong>190</strong> (Polícia Militar) ou <strong>180</strong> (Central de Atendimento à Mulher). Sua vida e segurança vêm em primeiro lugar.
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-# Aurora — Seus Direitos, Claros 💜
+# Guia Clara — Seus Direitos, Claros 💜
 Navegadora de direitos da mulher: triagem por IA + documentos jurídicos + passo a passo.
 
 ## Stack
@@ -24,12 +24,11 @@ npm run dev                 # http://localhost:3000
 - Env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_APP_URL`, `KIWIFY_WEBHOOK_TOKEN`
 - Região: `gru1` (vercel.json já configurado)
 
-## Checklist pós-rebrand (Clara → Aurora)
-- [ ] `npm run db:push` — aplica as migrações `20261003000000` (planos `aurora_plus`/`aurora_pro`) e `20261003000100` (RLS de `logs_ia`)
-- [ ] Painel Vercel: novo nome do projeto + env `NEXT_PUBLIC_APP_URL` com o domínio real (sem ela, robots/sitemap/canonical caem em localhost)
-- [ ] Meta Developers: se o webhook do WhatsApp estiver ativo, o Verify Token passou a ser `aurora_verify_123`
-- [ ] Kiwify: conferir nomes/produtos dos checkout de `Aurora+` e `Aurora Pro` (links em `app/page.tsx`) e configurar o **token do webhook** (`KIWIFY_WEBHOOK_TOKEN`) — sem segredo, entregas são recusadas em produção
-- [ ] E-mail de contato: trocar `oi@aurora.direito.br` pelo endereço real (hoje é placeholder)
+## Checklist de Produção (Guia Clara)
+- [ ] Painel Vercel: configurar env `NEXT_PUBLIC_APP_URL` com `https://clara-fldv.vercel.app` (ou o domínio final quando apontar `guiaclara.com.br`)
+- [ ] Meta Developers: webhook do WhatsApp com o verify token configurado
+- [ ] Kiwify: configurar o token do webhook (`KIWIFY_WEBHOOK_TOKEN`)
+- [ ] E-mail de contato: `contato@guiaclara.com.br`
 
 ## Verificações
 ```bash
@@ -38,10 +37,9 @@ npm test       # Vitest (unit tests)
 npm run build  # type-check + build
 ```
 
-
 ## Rotas
-- `/` landing • `/triagem` triagem gratuita (sem login) • `/login` `/cadastro`
-- `/dashboard` meus casos • `/casos/[id]` gerar documentos
+- `/` landing • `/blog` blog educativo • `/triagem` triagem gratuita (sem login) • `/login` `/cadastro`
+- `/dashboard` meus casos • `/casos/[id]` gerar documentos • `/checklist` endereços e passos da Defensoria
 - `POST /api/triagem` (Edge, sem auth) • `POST /api/casos` • `GET /api/casos/[id]`
 - `POST /api/casos/[id]/documentos` • `GET/POST /api/webhook/whatsapp` • `GET /api/health`
 

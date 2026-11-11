@@ -163,7 +163,7 @@ export default function TriagemPage() {
               </div>
               {resultado.documentos_sugeridos.length > 0 && (
                 <div>
-                  <h3 className="font-semibold mb-2">Documentos que a Aurora gera</h3>
+                  <h3 className="font-semibold mb-2">Documentos que o Guia Clara gera</h3>
                   <div className="flex flex-wrap gap-2">
                     {resultado.documentos_sugeridos.map((d) => <Badge key={d} className="bg-aurora-50 text-aurora-700 border-aurora-200">📄 {d}</Badge>)}
                   </div>
