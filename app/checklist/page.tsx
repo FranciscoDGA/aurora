@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import defensoriaData from '@/lib/data/defensoria.json'
@@ -20,8 +21,26 @@ export default function ChecklistPage() {
   const dados = defensoriaData[estado]
 
   return (
-    <div className="min-h-screen bg-aurora-50 px-4 py-10">
+    <div className="min-h-screen bg-aurora-50 flex flex-col">
+      <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-10">
+        <div className="mx-auto max-w-3xl px-4 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+            <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
+            Guia Clara
+          </Link>
+          <nav className="flex items-center gap-2">
+            <Link href="/"><Button variant="ghost" size="sm">Início</Button></Link>
+            <Link href="/blog"><Button variant="ghost" size="sm">Blog</Button></Link>
+            <Link href="/triagem"><Button size="sm">Fazer triagem</Button></Link>
+          </nav>
+        </div>
+      </header>
+      <main className="flex-1 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
+        <div className="space-y-1">
+          <h1 className="text-3xl font-extrabold tracking-tight">Checklist de Documentos e Endereços da Defensoria</h1>
+          <p className="text-sm text-muted-foreground">Confira os documentos essenciais para protocolar seu pedido gratuitamente.</p>
+        </div>
         <Card className="bg-aurora-900 text-white border-0">
           <CardContent className="p-6">
             <p className="font-bold">Em risco agora? Ligue 180 (Central da Mulher) ou 190 (emergência).</p>
@@ -80,6 +99,18 @@ export default function ChecklistPage() {
           </Link>
         </div>
       </div>
+      </main>
+      <footer className="border-t bg-white py-6 text-xs text-muted-foreground">
+        <div className="mx-auto max-w-3xl px-4 flex flex-wrap justify-between gap-4">
+          <span>Guia Clara — Orientação jurídica acessível</span>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/sobre" className="hover:underline">Sobre</Link>
+            <Link href="/contato" className="hover:underline">Contato</Link>
+            <Link href="/privacidade" className="hover:underline">Privacidade</Link>
+            <Link href="/termos-de-uso" className="hover:underline">Termos</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

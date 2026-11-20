@@ -1,11 +1,31 @@
 import type { MetadataRoute } from 'next'
+import { APP_URL } from '@/lib/site'
 
-// Configure NEXT_PUBLIC_APP_URL no painel da Vercel (domínio real de produção).
-const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+const AI_BOTS = [
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'GPTBot',
+  'PerplexityBot',
+  'ClaudeBot',
+  'Claude-SearchBot',
+]
+
+const DISALLOW_PRIVATE = ['/api/', '/dashboard', '/login', '/cadastro', '/casos']
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [{ userAgent: '*', allow: '/' }],
-    sitemap: `${BASE}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: DISALLOW_PRIVATE,
+      },
+      ...AI_BOTS.map((bot) => ({
+        userAgent: bot,
+        allow: '/',
+        disallow: DISALLOW_PRIVATE,
+      })),
+    ],
+    sitemap: `${APP_URL}/sitemap.xml`,
   }
 }

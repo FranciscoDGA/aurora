@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'Política de Privacidade | Guia Clara',
   description: 'Saiba como o Guia Clara coleta, utiliza e protege os seus dados pessoais, em conformidade com a LGPD.',
+  alternates: { canonical: '/privacidade' },
 }
 
 export default function PrivacidadePage() {

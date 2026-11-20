@@ -2,11 +2,17 @@ import { NextResponse } from 'next/server'
 import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 import { createHmac, timingSafeEqual } from 'crypto'
 
-// Cliente admin (service_role): atualiza plano ignorando RLS.
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || '',
-)
+export const dynamic = 'force-dynamic'
+
+// Cliente admin (service_role): instanciado sob demanda para não quebrar o build sem env vars.
+function getSupabaseAdmin(): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+  if (!url || !key) {
+    throw new Error('Configuração Supabase ausente para atualizar plano')
+  }
+  return createClient(url, key)
+}
 
 interface PayloadKiwify {
   order_status?: string
@@ -67,6 +73,7 @@ async function acharUsuarioPorEmail(
 }
 
 async function atualizarPlano(email: string, plano: string): Promise<NextResponse> {
+  const supabase = getSupabaseAdmin()
   const usuario = await acharUsuarioPorEmail(supabase, email)
   if (!usuario) {
     console.warn(`[kiwify] pagamento recebido para ${email}, mas o usuário não existe ainda`)

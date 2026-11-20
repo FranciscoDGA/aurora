@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/inputs'
 import { CapaPost } from '@/components/blog-capa'
 import { POSTS } from '@/lib/blog'
 import { getPost, getRelacionados } from '@/lib/blog/types'
+import { APP_URL } from '@/lib/site'
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }))
@@ -16,9 +17,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPost(POSTS, params.slug)
   if (!post) return {}
   return {
-    title: `${post.titulo} | Blog do Guia Clara`,
+    title: `${post.titulo} | Guia Clara`,
     description: post.descricao,
-    openGraph: { title: post.titulo, description: post.descricao, type: 'article' },
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: { title: post.titulo, description: post.descricao, type: 'article', url: `${APP_URL}/blog/${post.slug}` },
   }
 }
 
@@ -29,12 +31,24 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.titulo,
-    description: post.descricao,
-    datePublished: post.data,
-    author: { '@type': 'Organization', name: 'Guia Clara — Seus Direitos, Claros' },
-    inLanguage: 'pt-BR',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: post.titulo,
+        description: post.descricao,
+        datePublished: post.data,
+        author: { '@type': 'Organization', name: 'Guia Clara — Seus Direitos, Claros' },
+        inLanguage: 'pt-BR',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: APP_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${APP_URL}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.titulo, item: `${APP_URL}/blog/${post.slug}` },
+        ],
+      },
+    ],
   }
 
   return (
@@ -52,7 +66,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           </nav>
         </div>
       </header>
+      <main>
       <article className="mx-auto max-w-3xl px-4 py-10">
+        <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground mb-4 flex flex-wrap items-center gap-1.5">
+          <Link href="/" className="hover:underline">Início</Link>
+          <span>/</span>
+          <Link href="/blog" className="hover:underline">Blog</Link>
+          <span>/</span>
+          <span className="text-foreground font-medium">{post.categoria}</span>
+        </nav>
         <div className="flex flex-wrap items-center gap-2">
           <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
           <span className="text-xs text-muted-foreground">
@@ -99,6 +121,18 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           </div>
         )}
       </article>
+      </main>
+      <footer className="border-t bg-white py-8 text-xs text-muted-foreground">
+        <div className="mx-auto max-w-3xl px-4 flex flex-wrap justify-between gap-4">
+          <span>Guia Clara — Orientação jurídica acessível</span>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/sobre" className="hover:underline">Sobre</Link>
+            <Link href="/contato" className="hover:underline">Contato</Link>
+            <Link href="/privacidade" className="hover:underline">Privacidade</Link>
+            <Link href="/termos-de-uso" className="hover:underline">Termos</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { Mail, MessageCircle, AlertTriangle, Users } from 'lucide-react'
 export const metadata = {
   title: 'Contato | Guia Clara',
   description: 'Fale com a equipe do Guia Clara para tirar dúvidas, sugerir melhorias ou propor parcerias.',
+  alternates: { canonical: '/contato' },
 }
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''

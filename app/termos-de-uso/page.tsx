@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export const metadata = {
   title: 'Termos de Uso | Guia Clara',
   description: 'Regras de uso da plataforma Guia Clara: conta, planos, documentos-base e responsabilidades legais.',
+  alternates: { canonical: '/termos-de-uso' },
 }
 
 const SECOES = [

@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Sobre o Guia Clara — Seus Direitos, Claros',
-  description: 'Conheça a história e o propósito do Guia Clara, a navegadora de direitos da mulher criada para democratizar o acesso à justiça no Brasil.',
+  description: 'Conheça a história e o propósito do Guia Clara, a navegadora de direitos criada para democratizar o acesso à justiça no Brasil.',
+  alternates: { canonical: '/sobre' },
 }
 
 export default function SobrePage() {

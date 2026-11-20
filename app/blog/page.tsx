@@ -8,8 +8,9 @@ import { POSTS } from '@/lib/blog'
 import { CATEGORIAS, getAllPosts } from '@/lib/blog/types'
 
 export const metadata = {
-  title: 'Blog — Direitos da mulher explicados sem juridiquês | Guia Clara',
+  title: 'Blog — Direitos explicados sem juridiquês | Guia Clara',
   description: 'Guias práticos sobre pensão, guarda, divórcio, medida protetiva, direitos da gestante e mais. Conteúdo gratuito e atualizado.',
+  alternates: { canonical: '/blog' },
 }
 
 export default function BlogPage({ searchParams }: { searchParams?: { categoria?: string } }) {
@@ -31,7 +32,7 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
           </nav>
         </div>
       </header>
-      <div className="px-4 py-10">
+      <main className="px-4 py-10">
       <div className="mx-auto max-w-5xl space-y-8">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Blog do Guia Clara</h1>
@@ -75,7 +76,20 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
           <p className="text-center text-muted-foreground">Nenhum post nesta categoria ainda.</p>
         )}
       </div>
-      </div>
+      </main>
+      <footer className="border-t bg-white py-8 text-xs text-muted-foreground">
+        <div className="mx-auto max-w-5xl px-4 flex flex-wrap justify-between gap-4">
+          <span>Guia Clara — Orientação jurídica acessível</span>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/sobre" className="hover:underline">Sobre</Link>
+            <Link href="/triagem" className="hover:underline">Triagem</Link>
+            <Link href="/checklist" className="hover:underline">Checklist</Link>
+            <Link href="/contato" className="hover:underline">Contato</Link>
+            <Link href="/privacidade" className="hover:underline">Privacidade</Link>
+            <Link href="/termos-de-uso" className="hover:underline">Termos</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
