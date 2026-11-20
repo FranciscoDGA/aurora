@@ -235,4 +235,73 @@ export const POSTS_C: Post[] = [
 <p><strong>Preciso pagar alguma taxa?</strong> Não: atendimento e ação são gratuitos; com gratuidade da justiça, sem custas no processo.</p>
 <p>Veja <a href="/checklist">endereços e horários por estado</a> e monte sua pasta hoje. Acesso à Justiça começa com informação — e agora você tem.</p>`,
   },
+  {
+    slug: 'bpc-loas-quem-tem-direito-2026',
+    titulo: 'BPC/LOAS em 2026: quem tem direito, renda e como pedir no INSS',
+    descricao: 'Quem tem direito ao BPC/LOAS em 2026 (1 salário mínimo sem contribuir): critérios de idade e deficiência, limite de renda, CadÚnico e como pedir no Meu INSS.',
+    categoria: 'Direitos',
+    data: '2026-11-20',
+    leituraMin: 12,
+    conteudo: `
+<p>Você ou alguém da sua família nunca contribuiu para o INSS — ou contribuiu por pouco tempo —, mas enfrenta idade avançada ou uma deficiência que impede o sustento com dignidade? O <strong>BPC/LOAS (Benefício de Prestação Continuada)</strong> garante <strong>1 salário mínimo por mês (R$ 1.621,00 em 2026)</strong> sem exigir nenhuma contribuição prévia à Previdência Social. Ainda assim, milhares de pedidos são negados todos os meses por erro no CadÚnico ou desconhecimento do cálculo real da renda familiar. Veja as regras atuais e o passo a passo completo.</p>
+
+<h2>O que é o BPC/LOAS e o que a lei garante</h2>
+<p>Previsto no <strong>art. 203, inciso V, da Constituição Federal</strong> e regulamentado pela <strong>Lei Orgânica da Assistência Social (Lei nº 8.742/1993)</strong>, o BPC não é aposentadoria — é um benefício assistencial operacionalizado pelo INSS.</p>
+<ul>
+<li><strong>Valor mensal:</strong> exatamente <strong>1 salário mínimo vigente</strong> (<strong>R$ 1.621,00 em 2026</strong>), reajustado todo mês de janeiro;</li>
+<li><strong>Sem exigência de contribuição:</strong> quem trabalhou a vida toda na informalidade, no cuidado doméstico da família ou no campo sem recolher INSS pode receber normalmente;</li>
+<li><strong>Diferenças importantes para a aposentadoria:</strong> o BPC <strong>não paga 13º salário</strong>, <strong>não gera pensão por morte</strong> para dependentes e <strong>não pode ser acumulado</strong> com aposentadoria, pensão ou seguro-desemprego do próprio titular (salvo exceções específicas, como pensão especial ou auxílio-inclusão ao ingressar no trabalho formal).</li>
+</ul>
+
+<h2>Quem tem direito em 2026: os dois públicos atendidos</h2>
+<p>Para pedir o BPC/LOAS, o requerente brasileiro nato/naturalizado (ou estrangeiro residente legalmente no país conforme jurisprudência consolidada do STF) precisa cumprir requisitos pessoais <strong>mais</strong> o critério de renda e cadastro:</p>
+<ul>
+<li><strong>1. Idoso com 65 anos ou mais:</strong> homem ou mulher que já completou 65 anos na data do pedido, independentemente de estado de saúde;</li>
+<li><strong>2. Pessoa com Deficiência (de qualquer idade — inclusive crianças e idosos com menos de 65 anos):</strong> quem possui impedimento de <strong>longo prazo (mínimo de 2 anos)</strong> de natureza física, mental, intelectual ou sensorial, que em interação com barreiras sociais limite sua participação plena e efetiva na sociedade. Pessoas diagnosticadas com <strong>Transtorno do Espectro Autista (TEA)</strong> também são reconhecidas legalmente como pessoas com deficiência para fins de assistência social (Lei nº 12.764/2012).</li>
+</ul>
+
+<h2>Critério de renda familiar em 2026: o limite de R$ 405,25 e o que NÃO entra na conta</h2>
+<p>O critério objetivo da lei estabelece que a <strong>renda mensal bruta familiar por pessoa (per capita)</strong> deve ser inferior a <strong>1/4 do salário mínimo — ou seja, até R$ 405,25 por integrante em 2026</strong>. Para saber quem compõe o grupo familiar na conta do CRAS/INSS, somam-se apenas as pessoas que <strong>moram sob o mesmo teto</strong>: requerente, cônjuge ou companheiro(a), pais (ou madrasta/padrasto na ausência), irmãos solteiros, filhos e enteados solteiros e menores tutelados.</p>
+<p><strong>Atenção — o que a lei exclui da conta da renda familiar (não soma):</strong></p>
+<ul>
+<li>Outro <strong>BPC/LOAS</strong> ou <strong>benefício previdenciário de até 1 salário mínimo</strong> já recebido por <strong>outro idoso (65+) ou outra pessoa com deficiência</strong> que mora na mesma casa (Art. 20, § 14, Lei 8.742/1993);</li>
+<li>Valores do <strong>Bolsa Família</strong> e outros programas de transferência de renda assistencial;</li>
+<li>Remuneração de <strong>contrato de aprendizagem</strong> (Jovem Aprendiz) ou de <strong>estágio</strong>;</li>
+<li>Valores recebidos via <strong>auxílio financeiro temporário ou indenização por rompimento/desastre</strong> prevista em norma específica.</li>
+</ul>
+<p><strong>E se a renda passar um pouco de R$ 405,25 por pessoa?</strong> O Supremo Tribunal Federal e os Juizados Especiais Federais consolidaram entendimento de que o limite de 1/4 não é absoluto (e a própria Lei 8.742 prevê parâmetros até 1/2 salário mínimo com comprovação de vulnerabilidade). Na Justiça, <strong>despesas comprovadas com remédios não fornecidos pelo SUS, fraldas geriátricas/infantis, alimentação especial e tratamentos contínuos</strong> são abatidas da renda familiar para viabilizar o benefício.</p>
+
+<h2>Passo 1 obrigatório: atualizar o CadÚnico antes de pedir no INSS</h2>
+<p>Sem inscrição ativa e atualizada no <strong>Cadastro Único (CadÚnico)</strong>, o sistema do INSS indefere o requerimento automaticamente — muitas vezes em poucos dias, sem sequer agendar perícia:</p>
+<ol>
+<li>Vá ao <strong>CRAS (Centro de Referência de Assistência Social)</strong> mais próximo levando RG, CPF e título de eleitor de todas as pessoas que moram na casa (ou certidão de nascimento das crianças), além de comprovante de residência atualizado;</li>
+<li>Confirme se o cadastro está <strong>atualizado há menos de 24 meses (2 anos)</strong> com a composição familiar real do endereço atual;</li>
+<li>Regularize eventuais pendências de <strong>CPF</strong> na Receita Federal de todos os membros do grupo familiar e verifique o cadastro biométrico conforme exigência vigente para manutenção de benefícios sociais.</li>
+</ol>
+
+<h2>Passo 2: como dar entrada pelo Meu INSS sem atravessadores</h2>
+<p>Com o CadÚnico em dia, você mesma protocola o pedido gratuitamente sem pagar porcentagem para despachante:</p>
+<ol>
+<li>Acesse o aplicativo ou portal <strong>Meu INSS</strong> com sua conta Gov.br (ou ligue para o <strong>135</strong>);</li>
+<li>Clique em <strong>"Novo Pedido"</strong> e digite <strong>"Benefício Assistencial"</strong>, escolhendo <strong>Benefício Assistencial à Pessoa Idosa</strong> ou <strong>Benefício Assistencial à Pessoa com Deficiência</strong>;</li>
+<li>Confira os dados, anexe documentos pessoais e, no caso de deficiência, <strong>laudos médicos recentes com CID, receitas, relatórios de fisioterapia/fonoaudiologia e exames</strong> que demonstrem impedimento superior a 2 anos;</li>
+<li>No caso de pessoa com deficiência, o INSS agendará <strong>duas etapas presenciais</strong>: a <strong>Avaliação Social</strong> (feita por assistente social para analisar barreiras e condições da família) e a <strong>Perícia Médica Federal</strong>. Acompanhe o protocolo pelo aplicativo e nunca falte às datas marcadas.</li>
+</ol>
+
+<h2>Exemplo prático</h2>
+<p>Dona Maria, 67 anos, mora com o marido aposentado (que recebe exatamente 1 salário mínimo — R$ 1.621,00) e um neto de 19 anos desempregado. Em um cálculo apressado, alguém diria que a renda per capita é R$ 540,33 (1.621 ÷ 3), acima de R$ 405,25. Mas pela regra do Art. 20, § 14 da LOAS, a aposentadoria de 1 salário mínimo recebida pelo outro idoso (65+) na residência <strong>não entra no cálculo para concessão do BPC do cônjuge</strong>. Resultado: renda considerada R$ 0,00 — Dona Maria teve o BPC aprovado em primeira análise após atualizar o CadÚnico no CRAS.</p>
+
+<h2>O que fazer se o INSS negar o pedido</h2>
+<p>Negativas administrativas por erro de cálculo na renda, falta de consideração de despesas médicas ou avaliação pericial superficial são extremamente comuns. Antes de desistir, você pode:</p>
+<ul>
+<li><strong>Recurso administrativo (30 dias):</strong> protocolado pelo próprio Meu INSS juntando novos laudos ou correção do CadÚnico (se o problema era apenas cadastro desatualizado, muitas vezes um <strong>novo pedido após atualizar o CRAS</strong> resolve mais rápido);</li>
+<li><strong>Ação judicial no Juizado Especial Federal (JEF) ou via Defensoria Pública da União (DPU):</strong> permite abater despesas com saúde/medicamentos e passar por perito judicial especialista. Se precisa de atendimento gratuito ou de modelos orientativos, consulte nosso guia da <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria Pública</a>, use a <a href="/triagem">triagem gratuita do Guia Clara</a> e confira o <a href="/checklist">checklist completo de documentos</a>.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+<p><strong>Duas pessoas da mesma casa podem receber BPC/LOAS ao mesmo tempo?</strong> Sim. Tanto um segundo BPC quanto uma aposentadoria de até 1 salário mínimo recebida por idoso ou pessoa com deficiência não são computados para o pedido do outro integrante da família.</p>
+<p><strong>Preciso pagar advogado ou dar os primeiros meses de benefício?</strong> Nunca entregue seu salário a atravessadores. O pedido no Meu INSS é 100% gratuito e, se precisar ir à Justiça, a <strong>Defensoria Pública da União (DPU)</strong> e os Juizados Especiais Federais atuam gratuitamente para famílias de baixa renda.</p>
+<p><strong>Quem recebe BPC pode fazer empréstimo consignado ou trabalhar registrado?</strong> Se a pessoa com deficiência conseguir emprego com carteira assinada ou abrir MEI, o BPC fica suspenso e pode ser substituído pelo <strong>Auxílio-Inclusão</strong> (equivalente a 50% do salário mínimo) enquanto trabalhar dentro do limite de renda legal — e o titular pode reativar o BPC caso perca o emprego.</p>
+<p><strong>Quanto tempo o INSS tem para responder?</strong> Prazos variam conforme a fila de perícia médica e avaliação social da agência; se passar muito do prazo razoável de análise após toda a documentação entregue, é possível buscar orientação na Defensoria para mandado de segurança de análise prioritária.</p>`,
+  },
 ]
