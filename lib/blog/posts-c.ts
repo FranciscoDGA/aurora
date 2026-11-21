@@ -304,4 +304,112 @@ export const POSTS_C: Post[] = [
 <p><strong>Quem recebe BPC pode fazer empréstimo consignado ou trabalhar registrado?</strong> Se a pessoa com deficiência conseguir emprego com carteira assinada ou abrir MEI, o BPC fica suspenso e pode ser substituído pelo <strong>Auxílio-Inclusão</strong> (equivalente a 50% do salário mínimo) enquanto trabalhar dentro do limite de renda legal — e o titular pode reativar o BPC caso perca o emprego.</p>
 <p><strong>Quanto tempo o INSS tem para responder?</strong> Prazos variam conforme a fila de perícia médica e avaliação social da agência; se passar muito do prazo razoável de análise após toda a documentação entregue, é possível buscar orientação na Defensoria para mandado de segurança de análise prioritária.</p>`,
   },
+  {
+    slug: 'trabalho-sem-carteira-assinada-direitos-clt',
+    titulo: 'Trabalho Sem Carteira Assinada: Quais São os Meus Direitos na CLT em 2026?',
+    descricao: 'Trabalha ou trabalhou sem carteira assinada? Entenda quando existe vínculo empregatício na CLT, todos os direitos garantidos, quais provas reunir e o prazo para cobrar na Justiça.',
+    categoria: 'Trabalho',
+    data: '2026-11-21',
+    leituraMin: 12,
+    conteudo: `
+<p><strong>Sim: quem trabalha sem carteira assinada tem exatamente os mesmos direitos trabalhistas de quem tem registro na CLT</strong>, desde que estejam presentes os requisitos do vínculo empregatício. A falta de assinatura na Carteira de Trabalho (CTPS) é uma irregularidade do empregador — e <strong>não apaga seus direitos</strong>. Ao comprovar o vínculo na Justiça do Trabalho, você pode exigir o registro retroativo e receber todas as verbas que deixaram de ser pagas.</p>
+
+<h2>Quando existe vínculo empregatício? Os 4 requisitos do Art. 3º da CLT</h2>
+<p>Na Justiça do Trabalho vale o <strong>princípio da primazia da realidade</strong>: importa o que acontecia no dia a dia, e não o que o patrão dizia ("era só um bico", "era autônomo" ou "era MEI"). Pelo <strong>art. 3º da CLT</strong>, existe vínculo empregatício quando se somam quatro características:</p>
+<ul>
+<li><strong>Pessoalidade:</strong> o trabalho é feito por você, pessoalmente — você não pode simplesmente mandar um amigo ou parente no seu lugar quando quiser;</li>
+<li><strong>Habitualidade (não eventualidade):</strong> há rotina e frequência fixa (por exemplo, todos os dias, ou sempre às segundas, quartas e sextas), não um serviço isolado de um único dia;</li>
+<li><strong>Subordinação:</strong> você cumpre ordens, horários, metas ou regras definidas pelo empregador, que controla e fiscaliza como o serviço é feito;</li>
+<li><strong>Onerosidade:</strong> existe pagamento pelo trabalho (salário mensal, quinzenal, semanal ou diário, em dinheiro, Pix ou transferência).</li>
+</ul>
+<p>Se esses 4 pontos existiam na prática — mesmo sem contrato escrito, ou mesmo que tenham pedido para você abrir MEI (a chamada "pejotização") —, a lei reconhece que você era empregado(a) com direito à carteira assinada.</p>
+
+<h2>Quais direitos você tem ao comprovar o vínculo sem carteira?</h2>
+<p>Reconhecido o vínculo empregatício, o empregador é condenado a regularizar todo o período trabalhado e pagar os valores atrasados com juros e correção monetária:</p>
+<ul>
+<li><strong>Registro retroativo na CTPS Digital:</strong> anotação da data real de entrada, função, salário e data de saída, o que conta para sua aposentadoria;</li>
+<li><strong>FGTS + multa de 40%:</strong> depósito de 8% sobre toda a remuneração do período + multa de 40% em caso de demissão sem justa causa;</li>
+<li><strong>Férias vencidas e proporcionais + 1/3 constitucional:</strong> inclusive em dobro se o empregador deixou passar mais de 12 meses após o período aquisitivo sem conceder;</li>
+<li><strong>13º salário:</strong> integral para cada ano trabalhado e proporcional aos meses do ano da saída;</li>
+<li><strong>Aviso prévio indenizado:</strong> mínimo de 30 dias + 3 dias por ano completo de serviço (na dispensa sem justa causa);</li>
+<li><strong>Horas extras, adicional noturno e intervalos:</strong> acréscimo mínimo de 50% (100% em domingos e feriados) sobre horas além da jornada legal, além de adicional de insalubridade ou periculosidade se aplicável;</li>
+<li><strong>Recolhimento do INSS:</strong> contribuições previdenciárias do período, garantindo acesso a benefícios como auxílio-doença, salário-maternidade e aposentadoria;</li>
+<li><strong>Seguro-desemprego (ou indenização equivalente):</strong> se você foi dispensado(a) sem justa causa e cumpria o tempo mínimo de trabalho, o juiz pode liberar as guias ou condenar a empresa a pagar o valor equivalente em dinheiro.</li>
+</ul>
+<p>Se você estava grávida durante o período sem registro, também tem direito à estabilidade provisória — veja os detalhes em <a href="/blog/direitos-da-gestante-no-trabalho">direitos da gestante no trabalho</a>. E se sofreu humilhações ou constrangimentos no ambiente laboral, consulte <a href="/blog/assedio-sexual-no-trabalho-o-que-fazer">assédio no trabalho: o que fazer e como provar</a>.</p>
+
+<h2>Quais provas reunir para comprovar o trabalho sem registro</h2>
+<p>Você não precisa de um contrato assinado para vencer na Justiça. Comece a guardar provas <strong>antes mesmo de sair do emprego</strong>, de preferência em nuvem ou e-mail pessoal:</p>
+<ol>
+<li><strong>Mensagens de WhatsApp e áudios:</strong> conversas com o chefe ou RH combinando horários, folgas, cobranças de metas, escalas, pedidos de atestado ou valores de pagamento (não apague o histórico e salve prints mostrando o número do telefone);</li>
+<li><strong>Comprovantes de Pix, transferências e recibos:</strong> extratos bancários que mostrem depósitos recorrentes vindos da empresa, dos sócios ou de familiares do patrão;</li>
+<li><strong>Uniforme, crachá, e-mail corporativo e fotos no local:</strong> registros de você trabalhando, atendendo clientes, usando sistema da empresa ou participando de grupos de trabalho;</li>
+<li><strong>Escalas, folhas de ponto e anotações de jornada:</strong> fotos do quadro de horários, prints de ponto eletrônico ou planilhas enviadas pela chefia;</li>
+<li><strong>Testemunhas:</strong> colegas de trabalho, ex-funcionários, clientes frequentes ou fornecedores que presenciaram sua rotina (até 3 testemunhas no rito ordinário, ou 2 no rito sumaríssimo).</li>
+</ol>
+
+<h2>Prazo para entrar na Justiça do Trabalho (prescrição)</h2>
+<p>A Constituição Federal (art. 7º, XXIX) fixa duas regras de prazo que você precisa respeitar para não perder dinheiro:</p>
+<ul>
+<li><strong>Prazo de 2 anos após o fim do trabalho (prescrição bienal):</strong> você tem até <strong>2 anos contados da data de saída</strong> para entrar com a ação trabalhista. Passou de 2 anos, perde o direito de cobrar judicialmente;</li>
+<li><strong>Limite dos últimos 5 anos (prescrição quinquenal):</strong> ao entrar com a ação dentro do prazo, você pode cobrar as verbas dos <strong>últimos 5 anos</strong> contados para trás a partir da data em que o processo é protocolado.</li>
+</ul>
+<p><strong>Resumo prático:</strong> quanto antes você entrar com a ação após sair, mais meses e anos conseguirá recuperar.</p>
+
+<h2>Tabela resumo: direitos e prazos no trabalho sem carteira</h2>
+<div class="overflow-x-auto my-4">
+<table class="w-full border-collapse text-sm border border-neutral-200">
+<thead>
+<tr class="bg-neutral-100 text-left">
+<th class="border border-neutral-200 p-2.5 font-semibold">Item / Direito</th>
+<th class="border border-neutral-200 p-2.5 font-semibold">O que garante na CLT</th>
+<th class="border border-neutral-200 p-2.5 font-semibold">Observação importante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">Registro na CTPS</td>
+<td class="border border-neutral-200 p-2.5">Anotação retroativa de todo o período</td>
+<td class="border border-neutral-200 p-2.5">Conta tempo para aposentadoria no INSS</td>
+</tr>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">FGTS + Multa 40%</td>
+<td class="border border-neutral-200 p-2.5">8% ao mês + 40% na demissão sem justa causa</td>
+<td class="border border-neutral-200 p-2.5">Pago em dinheiro ou depositado em conta vinculada</td>
+</tr>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">Férias + 1/3</td>
+<td class="border border-neutral-200 p-2.5">Integrais e proporcionais + adicional de 1/3</td>
+<td class="border border-neutral-200 p-2.5">Férias vencidas sem gozo são pagas em dobro</td>
+</tr>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">13º Salário</td>
+<td class="border border-neutral-200 p-2.5">1/12 por mês trabalhado no ano</td>
+<td class="border border-neutral-200 p-2.5">Fração igual ou superior a 15 dias conta como mês</td>
+</tr>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">Aviso Prévio e Seguro</td>
+<td class="border border-neutral-200 p-2.5">Aviso de 30+ dias e guias/indenização do seguro</td>
+<td class="border border-neutral-200 p-2.5">Devidos na dispensa sem justa causa ou rescisão indireta</td>
+</tr>
+<tr>
+<td class="border border-neutral-200 p-2.5 font-medium">Prazo para processar</td>
+<td class="border border-neutral-200 p-2.5">Até 2 anos após sair (cobrando últimos 5 anos)</td>
+<td class="border border-neutral-200 p-2.5">Não espere: cada mês de atraso reduz o valor cobrável</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>Como dar o primeiro passo sem gastar</h2>
+<p>Você pode buscar um <strong>advogado trabalhista</strong> (muitos trabalham com honorários de êxito, cobrando apenas ao final se você ganhar), o <strong>sindicato da sua categoria</strong> ou atendimento gratuito em núcleos de prática jurídica de faculdades de Direito. Também vale conhecer seus caminhos de assistência gratuita em nosso guia sobre <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">como conseguir atendimento jurídico gratuito</a>, organizar seu caso na <a href="/triagem">triagem gratuita do Guia Clara</a> e separar sua documentação com o <a href="/checklist">checklist de documentos</a>.</p>
+
+<h2>Perguntas frequentes</h2>
+<p><strong>1. Se eu pedir demissão trabalhando sem carteira, perco todos os direitos?</strong> Não. Mesmo pedindo demissão, você continua tendo direito ao reconhecimento do vínculo na CTPS, saldo de salário, férias vencidas e proporcionais + 1/3, 13º proporcional, horas extras e recolhimento do FGTS/INSS (apenas não saca o FGTS nem recebe multa de 40% e seguro-desemprego). Porém, se o patrão se recusa a assinar a carteira, é possível pedir <strong>rescisão indireta</strong> — que equivale a uma demissão sem justa causa com todos os direitos.</p>
+<p><strong>2. Trabalhei apenas alguns meses sem registro (por exemplo, 3 ou 6 meses). Vale a pena cobrar?</strong> Sim. O registro na carteira é obrigatório desde o primeiro dia de trabalho (inclusive no contrato de experiência). Mesmo períodos curtos geram direito a FGTS, férias proporcionais + 1/3, 13º proporcional e INSS.</p>
+<p><strong>3. O patrão pagava "por fora" em dinheiro vivo e não tenho comprovante bancário. Ainda consigo provar?</strong> Sim. Mensagens de WhatsApp, fotos no local de trabalho, escalas e principalmente <strong>testemunhas</strong> (colegas ou clientes) são amplamente aceitos pela Justiça do Trabalho para provar o vínculo e o valor do salário.</p>
+<p><strong>4. Trabalhei sem carteira, mas era MEI. Tenho direito à CLT?</strong> Se na prática você cumpria horário fixo, recebia ordens diretas e não podia mandar outra pessoa no seu lugar, o juiz pode declarar a fraude ("pejotização") e reconhecer o vínculo empregatício com todos os direitos da CLT.</p>
+
+<p><em>Nota informativa: este guia tem caráter educativo e geral, baseado na Consolidação das Leis do Trabalho (CLT) vigente em 2026, e não substitui a análise individual do seu caso por um(a) advogado(a) trabalhista.</em></p>`,
+  },
 ]
