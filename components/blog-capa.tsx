@@ -65,10 +65,10 @@ export function CapaPost({
         alt={`Categoria ${categoria}`}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
-        className="object-cover"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
       {/* Overlay leve para dar contraste */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/5 to-transparent" />
       
       {rotulo && (
         <span className="absolute bottom-3 left-4 rounded-full bg-black/50 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">

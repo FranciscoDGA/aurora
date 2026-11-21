@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Scale } from 'lucide-react'
+import { Scale, Clock, Calendar, ArrowLeft, ArrowRight, ShieldAlert } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/inputs'
@@ -52,84 +52,133 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col bg-white text-neutral-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-10">
-        <div className="mx-auto max-w-3xl px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-aurora-600 text-white"><Scale size={20} /></span>
+
+      <header className="sticky top-0 z-30 border-b border-neutral-200/70 bg-white/85 backdrop-blur-md">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-2.5 font-heading font-bold text-lg sm:text-xl tracking-tight text-neutral-900">
+            <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-aurora-500 to-aurora-700 text-white shadow-sm">
+              <Scale size={19} />
+            </span>
             Guia Clara
           </Link>
           <nav className="flex items-center gap-2">
-            <Link href="/blog"><Button variant="ghost" size="sm">← Blog</Button></Link>
+            <Link href="/blog">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft size={14} /> Blog
+              </Button>
+            </Link>
             <Link href="/triagem"><Button size="sm">Fazer triagem</Button></Link>
           </nav>
         </div>
       </header>
-      <main>
-      <article className="mx-auto max-w-3xl px-4 py-10">
-        <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground mb-4 flex flex-wrap items-center gap-1.5">
-          <Link href="/" className="hover:underline">Início</Link>
-          <span>/</span>
-          <Link href="/blog" className="hover:underline">Blog</Link>
-          <span>/</span>
-          <span className="text-foreground font-medium">{post.categoria}</span>
-        </nav>
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
-          <span className="text-xs text-muted-foreground">
-            {new Date(post.data + 'T12:00:00').toLocaleDateString('pt-BR')} • {post.leituraMin} min de leitura
-          </span>
-        </div>
-        <h1 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-balance">{post.titulo}</h1>
-        <p className="mt-3 text-lg text-muted-foreground">{post.descricao}</p>
-        <CapaPost categoria={post.categoria} semente={post.slug} className="mt-6 h-56 md:h-64 rounded-xl" iconSize={64} />
 
-        <div
-          className="post-conteudo mt-8 space-y-4 text-[1.05rem] leading-relaxed text-neutral-800 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:pt-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:space-y-1.5 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:space-y-1.5 [&_a]:text-aurora-700 [&_a]:underline"
-          dangerouslySetInnerHTML={{ __html: post.conteudo }}
-        />
+      <main className="flex-1">
+        <article className="mx-auto max-w-[740px] px-4 sm:px-6 py-10 md:py-14">
+          <nav aria-label="Breadcrumb" className="text-xs text-neutral-500 mb-5 flex flex-wrap items-center gap-1.5">
+            <Link href="/" className="hover:text-aurora-700 transition-colors">Início</Link>
+            <span>/</span>
+            <Link href="/blog" className="hover:text-aurora-700 transition-colors">Blog</Link>
+            <span>/</span>
+            <span className="text-neutral-800 font-medium">{post.categoria}</span>
+          </nav>
 
-        <Card className="mt-10 bg-aurora-50 border-aurora-200">
-          <CardHeader><CardTitle>Precisa aplicar isso no seu caso?</CardTitle></CardHeader>
-          <CardContent className="flex flex-col sm:flex-row gap-2">
-            <Link href="/triagem"><Button>Fazer triagem gratuita</Button></Link>
-            <Link href="/checklist"><Button variant="outline">Ver checklist e endereços</Button></Link>
-          </CardContent>
-        </Card>
-
-        <p className="mt-6 text-xs text-muted-foreground">
-          Aviso: conteúdo informativo e geral, não substitui orientação jurídica individual. Para o seu caso,
-          leve os documentos gerados pelo Guia Clara à Defensoria Pública ou advogada.
-        </p>
-
-        {relacionados.length > 0 && (
-          <div className="mt-10">
-            <h2 className="text-xl font-bold mb-4">Leia também</h2>
-            <div className="grid sm:grid-cols-3 gap-3">
-              {relacionados.map((r) => (
-                <Link key={r.slug} href={`/blog/${r.slug}`}>
-                  <Card className="h-full hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200 mb-2">{r.categoria}</Badge>
-                      <p className="font-semibold text-sm leading-snug">{r.titulo}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+          <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500">
+            <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
+            <span className="inline-flex items-center gap-1">
+              <Calendar size={13} />
+              {new Date(post.data + 'T12:00:00').toLocaleDateString('pt-BR')}
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <Clock size={13} />
+              {post.leituraMin} min de leitura
+            </span>
           </div>
-        )}
-      </article>
+
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-[2.5rem] font-extrabold tracking-tight leading-[1.16] text-neutral-950 text-balance">
+            {post.titulo}
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl leading-relaxed text-neutral-600">
+            {post.descricao}
+          </p>
+
+          <CapaPost
+            categoria={post.categoria}
+            semente={post.slug}
+            className="mt-8 h-56 sm:h-64 md:h-72 rounded-2xl shadow-sm"
+            iconSize={64}
+          />
+
+          <div
+            className="post-conteudo mt-10"
+            dangerouslySetInnerHTML={{ __html: post.conteudo }}
+          />
+
+          <Card className="mt-12 bg-gradient-to-br from-aurora-50 to-rose-50/60 border-aurora-200/80 shadow-xs">
+            <CardHeader className="pb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-aurora-600">Próximo passo</p>
+              <CardTitle className="text-xl text-neutral-950">Precisa aplicar isso no seu caso?</CardTitle>
+              <p className="text-sm text-neutral-600 leading-relaxed pt-1">
+                Faça a triagem gratuita e receba os documentos-base prontos para levar à Defensoria Pública ou advogada.
+              </p>
+            </CardHeader>
+            <CardContent className="flex flex-col sm:flex-row gap-3">
+              <Link href="/triagem">
+                <Button className="w-full sm:w-auto group">
+                  Fazer triagem gratuita
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                </Button>
+              </Link>
+              <Link href="/checklist">
+                <Button variant="outline" className="w-full sm:w-auto">Ver checklist e endereços</Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <div className="mt-8 rounded-xl border border-neutral-200/80 bg-neutral-50/80 p-4 flex items-start gap-3 text-xs leading-relaxed text-neutral-600">
+            <ShieldAlert size={16} className="text-neutral-500 shrink-0 mt-0.5" />
+            <p>
+              Aviso: conteúdo informativo e geral, não substitui orientação jurídica individual. Para o seu caso,
+              leve os documentos gerados pelo Guia Clara à Defensoria Pública ou advogada.
+            </p>
+          </div>
+
+          {relacionados.length > 0 && (
+            <div className="mt-14 pt-10 border-t border-neutral-200/80">
+              <h2 className="text-xl font-bold tracking-tight text-neutral-900 mb-5">Leia também</h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {relacionados.map((r) => (
+                  <Link key={r.slug} href={`/blog/${r.slug}`} className="group block h-full">
+                    <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-aurora-200">
+                      <CardContent className="p-5 flex flex-col justify-between h-full gap-3">
+                        <div>
+                          <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200 mb-2.5">{r.categoria}</Badge>
+                          <p className="font-semibold text-sm leading-snug text-neutral-900 group-hover:text-aurora-700 transition-colors">
+                            {r.titulo}
+                          </p>
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-aurora-600">
+                          Ler guia <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
       </main>
-      <footer className="border-t bg-white py-8 text-xs text-muted-foreground">
-        <div className="mx-auto max-w-3xl px-4 flex flex-wrap justify-between gap-4">
-          <span>Guia Clara — Orientação jurídica acessível</span>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/sobre" className="hover:underline">Sobre</Link>
-            <Link href="/contato" className="hover:underline">Contato</Link>
-            <Link href="/privacidade" className="hover:underline">Privacidade</Link>
-            <Link href="/termos-de-uso" className="hover:underline">Termos</Link>
+
+      <footer className="border-t border-neutral-200/80 bg-neutral-50/80 py-8 text-xs text-neutral-500">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span>Guia Clara © 2026 — Orientação jurídica acessível</span>
+          <div className="flex flex-wrap justify-center gap-5">
+            <Link href="/sobre" className="hover:text-aurora-700 transition-colors">Sobre</Link>
+            <Link href="/contato" className="hover:text-aurora-700 transition-colors">Contato</Link>
+            <Link href="/privacidade" className="hover:text-aurora-700 transition-colors">Privacidade</Link>
+            <Link href="/termos-de-uso" className="hover:text-aurora-700 transition-colors">Termos</Link>
           </div>
         </div>
       </footer>

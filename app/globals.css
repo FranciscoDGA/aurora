@@ -52,6 +52,56 @@
 @layer base {
   * { @apply border-border; }
   body { @apply bg-background text-foreground; font-feature-settings: "rlig" 1, "calt" 1; }
+  h1, h2, h3, h4 { font-family: var(--font-jakarta), var(--font-inter), system-ui, sans-serif; }
+}
+
+@layer components {
+  .post-conteudo {
+    @apply text-[1.0625rem] leading-[1.8] text-neutral-700 space-y-5;
+  }
+  .post-conteudo h2 {
+    @apply text-2xl font-bold tracking-tight text-neutral-900 pt-6 pb-1 border-b border-neutral-100;
+  }
+  .post-conteudo h3 {
+    @apply text-xl font-bold tracking-tight text-neutral-900 pt-4;
+  }
+  .post-conteudo p {
+    @apply leading-[1.8];
+  }
+  .post-conteudo strong {
+    @apply font-semibold text-neutral-900;
+  }
+  .post-conteudo ul {
+    @apply list-disc pl-6 space-y-2 marker:text-aurora-500;
+  }
+  .post-conteudo ol {
+    @apply list-decimal pl-6 space-y-2 marker:text-aurora-600 marker:font-semibold;
+  }
+  .post-conteudo a {
+    @apply text-aurora-700 font-medium underline decoration-aurora-300 underline-offset-4 hover:text-aurora-800 hover:decoration-aurora-600 transition-colors;
+  }
+  .post-conteudo blockquote {
+    @apply my-6 rounded-xl border-l-4 border-aurora-500 bg-aurora-50/60 px-5 py-4 text-neutral-800 italic;
+  }
+  .post-conteudo hr {
+    @apply my-8 border-neutral-200;
+  }
+  .post-conteudo table {
+    @apply my-6 block w-full overflow-x-auto rounded-xl border border-neutral-200 text-sm text-left;
+  }
+  .post-conteudo thead {
+    @apply bg-neutral-50 text-neutral-900 font-semibold;
+  }
+  .post-conteudo th,
+  .post-conteudo td {
+    @apply px-4 py-3 border-b border-neutral-200 align-top;
+  }
+  .post-conteudo tbody tr:last-child td {
+    @apply border-b-0;
+  }
+  .post-conteudo tbody tr:nth-child(even) {
+    @apply bg-neutral-50/50;
+  }
 }
 
 @layer utilities {
