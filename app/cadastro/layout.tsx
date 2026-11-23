@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Criar Conta Grátis | Guia Clara',
-  description: 'Crie sua conta gratuita no Guia Clara para salvar sua triagem e gerar documentos em PDF.',
+  title: 'Criar Conta Grátis | Aurora',
+  description: 'Crie sua conta gratuita na Aurora para salvar sua triagem e gerar minutas de documentos.',
   robots: { index: false, follow: true },
 }
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Scale, Clock, Calendar, ArrowLeft, ArrowRight, ShieldAlert } from 'lucide-react'
+import { Scale, Clock, Calendar, ArrowLeft, ArrowRight, ShieldAlert, BookOpen, UserCheck, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/inputs'
@@ -17,7 +17,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPost(POSTS, params.slug)
   if (!post) return {}
   return {
-    title: `${post.titulo} | Guia Clara`,
+    title: `${post.titulo} | Aurora`,
     description: post.descricao,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: { title: post.titulo, description: post.descricao, type: 'article', url: `${APP_URL}/blog/${post.slug}` },
@@ -37,7 +37,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         headline: post.titulo,
         description: post.descricao,
         datePublished: post.data,
-        author: { '@type': 'Organization', name: 'Guia Clara — Seus Direitos, Claros' },
+        dateModified: post.dataAtualizacao || post.data,
+        author: { '@type': 'Organization', name: post.responsavelEditorial || 'Equipe Editorial Aurora' },
         inLanguage: 'pt-BR',
       },
       {
@@ -51,6 +52,11 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     ],
   }
 
+  const dataFormatada = new Date(post.data + 'T12:00:00').toLocaleDateString('pt-BR')
+  const dataAtualizacaoFormatada = post.dataAtualizacao
+    ? new Date(post.dataAtualizacao + 'T12:00:00').toLocaleDateString('pt-BR')
+    : null
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-neutral-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -61,7 +67,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-aurora-500 to-aurora-700 text-white shadow-sm">
               <Scale size={19} />
             </span>
-            Guia Clara
+            Aurora
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/blog">
@@ -81,46 +87,93 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             <span>/</span>
             <Link href="/blog" className="hover:text-aurora-700 transition-colors">Blog</Link>
             <span>/</span>
-            <span className="text-neutral-800 font-medium">{post.categoria}</span>
+            <span className="text-neutral-700 truncate max-w-[240px] sm:max-w-md">{post.titulo}</span>
           </nav>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500">
-            <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
-            <span className="inline-flex items-center gap-1">
-              <Calendar size={13} />
-              {new Date(post.data + 'T12:00:00').toLocaleDateString('pt-BR')}
-            </span>
-            <span className="inline-flex items-center gap-1">
-              <Clock size={13} />
-              {post.leituraMin} min de leitura
-            </span>
-          </div>
+          <header className="space-y-4">
+            <div className="flex flex-wrap items-center gap-2.5 text-xs text-neutral-500">
+              <Badge className="bg-aurora-50 text-aurora-700 border-aurora-200">{post.categoria}</Badge>
+              <span className="inline-flex items-center gap-1">
+                <Calendar size={13} className="text-neutral-400" />
+                {dataFormatada}
+              </span>
+              <span>•</span>
+              <span className="inline-flex items-center gap-1">
+                <Clock size={13} className="text-neutral-400" />
+                {post.leituraMin} min de leitura
+              </span>
+            </div>
 
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-[2.5rem] font-extrabold tracking-tight leading-[1.16] text-neutral-950 text-balance">
-            {post.titulo}
-          </h1>
-          <p className="mt-4 text-lg sm:text-xl leading-relaxed text-neutral-600">
-            {post.descricao}
-          </p>
+            <h1 className="text-3xl sm:text-4xl md:text-[2.6rem] font-extrabold tracking-tight leading-[1.12] text-neutral-950 text-balance">
+              {post.titulo}
+            </h1>
 
-          <CapaPost
-            categoria={post.categoria}
-            semente={post.slug}
-            className="mt-8 h-56 sm:h-64 md:h-72 rounded-2xl shadow-sm"
-            iconSize={64}
-          />
+            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed">
+              {post.descricao}
+            </p>
+
+            <CapaPost
+              categoria={post.categoria}
+              semente={post.slug}
+              className="mt-6 h-56 sm:h-72 w-full rounded-2xl shadow-xs"
+              iconSize={72}
+            />
+
+            {/* METADADOS EDITORIAIS */}
+            <div className="mt-6 p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs text-neutral-700 space-y-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <UserCheck size={14} className="text-aurora-600" />
+                  Responsável editorial: <strong>{post.responsavelEditorial ?? 'Equipe Editorial Aurora'}</strong>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Calendar size={14} className="text-neutral-500" />
+                  Publicado em: {dataFormatada} {dataAtualizacaoFormatada ? `(revisto em ${dataAtualizacaoFormatada})` : ''}
+                </span>
+              </div>
+              <div className="pt-1.5 border-t text-neutral-600 flex items-start gap-1.5">
+                <AlertCircle size={14} className="text-amber-600 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Status técnico:</strong> {post.statusRevisao ?? 'Conteúdo com finalidade estritamente informativa. As regras aplicáveis dependem das provas e circunstâncias particulares de cada caso.'}
+                </span>
+              </div>
+            </div>
+          </header>
 
           <div
-            className="post-conteudo mt-10"
+            className="post-conteudo mt-10 space-y-5 text-neutral-800 text-[1.03rem] leading-[1.8]
+              [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-neutral-950 [&_h2]:pt-8 [&_h2]:pb-1
+              [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-neutral-900 [&_h3]:pt-4
+              [&_p]:leading-relaxed
+              [&_strong]:text-neutral-950 [&_strong]:font-semibold
+              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:my-3
+              [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_ol]:my-3
+              [&_li]:pl-1
+              [&_a]:text-aurora-700 [&_a]:underline [&_a]:underline-offset-2 [&_a]:font-medium hover:[&_a]:text-aurora-800
+              [&_blockquote]:border-l-4 [&_blockquote]:border-aurora-300 [&_blockquote]:bg-aurora-50/40 [&_blockquote]:py-2 [&_blockquote]:px-4 [&_blockquote]:rounded-r-lg [&_blockquote]:italic"
             dangerouslySetInnerHTML={{ __html: post.conteudo }}
           />
 
-          <Card className="mt-12 bg-gradient-to-br from-aurora-50 to-rose-50/60 border-aurora-200/80 shadow-xs">
+          {/* FONTES E REFERÊNCIAS */}
+          {post.fontesReferencias && post.fontesReferencias.length > 0 && (
+            <div className="mt-8 p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs text-neutral-700 space-y-1.5">
+              <p className="font-bold flex items-center gap-1.5 text-neutral-900">
+                <BookOpen size={14} className="text-aurora-600" /> Fontes e legislação de referência:
+              </p>
+              <ul className="list-disc ml-5 space-y-1">
+                {post.fontesReferencias.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <Card className="mt-12 bg-gradient-to-br from-aurora-50/70 via-aurora-50/30 to-white border-aurora-200/90 shadow-sm">
             <CardHeader className="pb-3">
               <p className="text-xs font-semibold uppercase tracking-widest text-aurora-600">Próximo passo</p>
               <CardTitle className="text-xl text-neutral-950">Precisa aplicar isso no seu caso?</CardTitle>
               <p className="text-sm text-neutral-600 leading-relaxed pt-1">
-                Faça a triagem gratuita e receba os documentos-base prontos para levar à Defensoria Pública ou advogada.
+                Faça a triagem gratuita e receba os documentos-base preliminares para levar à Defensoria Pública ou advogada.
               </p>
             </CardHeader>
             <CardContent className="flex flex-col sm:flex-row gap-3">
@@ -131,7 +184,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 </Button>
               </Link>
               <Link href="/checklist">
-                <Button variant="outline" className="w-full sm:w-auto">Ver checklist e endereços</Button>
+                <Button variant="outline" className="w-full sm:w-auto">Ver checklist e Defensoria</Button>
               </Link>
             </CardContent>
           </Card>
@@ -140,7 +193,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             <ShieldAlert size={16} className="text-neutral-500 shrink-0 mt-0.5" />
             <p>
               Aviso: conteúdo informativo e geral, não substitui orientação jurídica individual. Para o seu caso,
-              leve os documentos gerados pelo Guia Clara à Defensoria Pública ou advogada.
+              leve os documentos gerados pela Aurora à Defensoria Pública ou advogada.
             </p>
           </div>
 
@@ -173,7 +226,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
       <footer className="border-t border-neutral-200/80 bg-neutral-50/80 py-8 text-xs text-neutral-500">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>Guia Clara © 2026 — Orientação jurídica acessível</span>
+          <span>Aurora © 2026 — Orientação jurídica acessível</span>
           <div className="flex flex-wrap justify-center gap-5">
             <Link href="/sobre" className="hover:text-aurora-700 transition-colors">Sobre</Link>
             <Link href="/contato" className="hover:text-aurora-700 transition-colors">Contato</Link>

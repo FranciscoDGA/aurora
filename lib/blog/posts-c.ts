@@ -4,13 +4,13 @@ import type { Post } from './types'
 export const POSTS_C: Post[] = [
   {
     slug: 'nome-negativado-indevidamente-o-que-fazer',
-    titulo: 'Nome negativado indevidamente: como limpar e ser indenizada',
-    descricao: 'Dívida que você não fez no SPC/Serasa? Passo a passo para tirar o nome rápido, quando cabe dano moral e valores da jurisprudência.',
+    titulo: 'Nome negativado indevidamente: como contestar e seus direitos',
+    descricao: 'Dívida que você não fez no SPC/Serasa? Passo a passo para contestar a negativação indevida, pedidos liminares e entendimentos dos tribunais.',
     categoria: 'Consumidor',
     data: '2026-09-11',
     leituraMin: 13,
     conteudo: `
-<p>Descobrir o nome sujo por uma dívida que <strong>nunca fez</strong> — ou que já pagou — é revoltante e extremamente comum: fraudes com dados vazados, cobranças duplicadas, contas de ex, erros de cadastro. Além do transtorno (crédito negado, constrangimento), a lei garante na maioria desses casos <strong>limpeza rápida + indenização por dano moral</strong>. Veja o roteiro completo.</p>
+<p>Descobrir o nome negativado por uma dívida que você <strong>nunca contraiu</strong> — ou que já foi quitada — causa grandes transtornos cotidianos. A legislação do consumidor prevê instrumentos para contestar o apontamento e requerer a <strong>exclusão do registro indevido e eventuais indenizações cabíveis</strong>. Veja o passo a passo legal.</p>
 <h2>O que a lei diz</h2>
 <p>O <strong>CDC (arts. 42 e 43)</strong> exige que a inscrição seja de dívida <strong>legítima, vencida e previamente comunicada</strong> ao consumidor. Sem esses três, a negativação é indevida. E o <strong>art. 43, §2º</strong>: você deve ser avisada por carta antes da inclusão — sem aviso, já há irregularidade. A jurisprudência (inclusive STJ) entende que negativação indevida gera <strong>dano moral presumido</strong> (<em>in re ipsa</em>): não precisa provar tristeza — o fato basta.</p>
 <h2>Passo 1: confirme e documente a negativação</h2>
@@ -24,7 +24,7 @@ export const POSTS_C: Post[] = [
 </ol>
 <p>Muitas empresas removem nessa fase para evitar processo. Se não removerem em ~15 dias, avance.</p>
 <h2>Passo 3: Justiça — liminar + inexistência + dano moral</h2>
-<p>A ação pede três coisas: <strong>liminar para tirar o nome na hora</strong> (em dias), <strong>declaração de inexistência do débito</strong> e <strong>dano moral</strong>. O <strong>Juizado Especial Cível</strong> resolve causas de até 20 salários-mínimos <strong>sem advogado</strong> — ideal para esses casos. Leve: extrato da negativação, RG/CPF, comprovante de endereço, protocolos de reclamação e BO (se fraude).</p>
+<p>A ação comumente pleiteia: <strong>tutela de urgência (liminar) para suspensão da negativação</strong> enquanto o processo tramita, <strong>declaração de inexistência do débito</strong> e <strong>eventual indenização por dano moral</strong>. O <strong>Juizado Especial Cível</strong> pode receber causas cíveis de menor complexidade de até 20 salários-mínimos sem obrigatoriedade de advogado na fase inicial — contudo, a orientação por defensora ou advogada é recomendada. Leve: extrato da negativação, RG/CPF, comprovante de endereço, protocolos de reclamação e BO (em caso de fraude comprovada).</p>
 <h2>Quanto vale a indenização?</h2>
 <p>Na prática dos Juizados e tribunais, negativação indevida típica rende entre <strong>R$ 5 mil e R$ 15 mil</strong>, variando com: tempo com o nome sujo, reiteração, porte da empresa, se houve descumprimento de ordem de exclusão (aumenta muito) e se você já tinha outras negativações <strong>legítimas</strong> (Súmula 385 do STJ: pode reduzir ou afastar o dano — por isso o extrato completo importa).</p>
 <h2>Quando NÃO cabe dano moral?</h2>
@@ -39,7 +39,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Limpei pagando. Posso pedir dano?</strong> Se a dívida era indevida e você pagou sob pressão, sim — guarde o comprovante do pagamento.</p>
 <p><strong>Empresa sumiu/faliu?</strong> Dá para pedir a exclusão direto aos birôs (Serasa/SPC) e discutir responsabilidade conforme o caso.</p>
 <p><strong>Quanto tempo demora?</strong> Liminar: dias. Sentença no Juizado: em geral 4–12 meses.</p>
-<p>Gere a base da declaratória na <a href="/triagem">triagem do Guia Clara</a> e busque atendimento na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria</a> ou no Juizado da sua comarca.</p>`,
+<p>Gere a base da declaratória na <a href="/triagem">triagem do Aurora</a> e busque atendimento na <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria</a> ou no Juizado da sua comarca.</p>`,
   },
   {
     slug: 'pensao-atrasada-execucao-e-prisao',
@@ -84,7 +84,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Ele paga metade. Executo a diferença?</strong> Sim — diferença é débito como qualquer outro.</p>
 <p><strong>Ele está preso por outro motivo. E a pensão?</strong> A obrigação continua; executa-se contra bens e, na soltura, o saldo.</p>
 <p><strong>Posso executar pensão de acordo verbal?</strong> Não diretamente — primeiro é preciso formalizar (ação de alimentos ou homologação do acordo). Depois, executa.</p>
-<p>Monte sua execução com a <a href="/triagem">triagem do Guia Clara</a> e revise o valor em <a href="/blog/como-pedir-pensao-alimenticia-passo-a-passo">como pedir pensão</a>.</p>`,
+<p>Monte sua execução com a <a href="/triagem">triagem do Aurora</a> e revise o valor em <a href="/blog/como-pedir-pensao-alimenticia-passo-a-passo">como pedir pensão</a>.</p>`,
   },
   {
     slug: 'regulamentacao-de-visitas',
@@ -184,7 +184,7 @@ export const POSTS_C: Post[] = [
 <p><strong>Posso vender bem comum antes da partilha?</strong> Só com anuência do outro (ou ordem judicial). Venda unilateral é anulável.</p>
 <p><strong>Aluguel de imóvel comum: de quem é?</strong> Metade de cada um, desde a separação de fato — cobre na partilha.</p>
 <p><strong>Empresa aberta antes, que cresceu depois?</strong> A valorização no período pode entrar — exige perícia. Não aceite “é minha e pronto”.</p>
-<p>Gere a base do <strong>plano de partilha</strong> na <a href="/triagem">triagem do Guia Clara</a> e revise cada item com a <a href="/checklist">Defensoria</a> antes de assinar. Combine com <a href="/blog/divorcio-consensual-ou-litigioso">divórcio consensual ou litigioso</a>.</p>`,
+<p>Gere a base do <strong>plano de partilha</strong> na <a href="/triagem">triagem do Aurora</a> e revise cada item com a <a href="/checklist">Defensoria</a> antes de assinar. Combine com <a href="/blog/divorcio-consensual-ou-litigioso">divórcio consensual ou litigioso</a>.</p>`,
   },
   {
     slug: 'defensoria-publica-como-conseguir-atendimento-gratuito',
@@ -212,7 +212,7 @@ export const POSTS_C: Post[] = [
 <li>RG, CPF e comprovante de endereço (originais + cópias);</li>
 <li>Comprovante de renda <em>e</em> de despesas (aluguel, escola, remédios);</li>
 <li>Documentos do caso: certidões, <a href="/blog/como-fazer-boletim-de-ocorrencia">BOs</a>, prints, contratos, planilha de gastos;</li>
-<li>Documentos gerados na <a href="/triagem">triagem do Guia Clara</a>, impressos — você economiza uma consulta inteira;</li>
+<li>Documentos gerados na <a href="/triagem">triagem do Aurora</a>, impressos — você economiza uma consulta inteira;</li>
 <li>Se já há processo: número, vara e últimas movimentações.</li>
 </ul>
 <h2>Como agendar?</h2>
@@ -226,7 +226,7 @@ export const POSTS_C: Post[] = [
 <li><strong>Volte quando chamada</strong> e avise mudança de endereço/telefone — processo parado por falta de contato é comum.</li>
 </ol>
 <h2>Exemplo prático</h2>
-<p>Sem dinheiro para advogada, Luana chegou à Defensoria com: linha do tempo escrita, planilha de gastos dos filhos, prints do ex admitindo a dívida e a petição-base do Guia Clara impressa. Em 40 minutos saiu com a ação de alimentos protocolada + pedido de provisórios. O defensor disse o que ela ouve aqui: “quem chega organizada sai com processo andando”.</p>
+<p>Sem dinheiro para advogada, Luana chegou à Defensoria com: linha do tempo escrita, planilha de gastos dos filhos, prints do ex admitindo a dívida e a petição-base do Aurora impressa. Em 40 minutos saiu com a ação de alimentos protocolada + pedido de provisórios. O defensor disse o que ela ouve aqui: “quem chega organizada sai com processo andando”.</p>
 <h2>E se não houver Defensoria na sua cidade?</h2>
 <p>Opções: <strong>unidade regional</strong> mais próxima, <strong>faculdades de Direito</strong> (núcleos de prática jurídica atendem de graça), <strong>OAB</strong> (convênios de assistência), <strong>Juizado Especial</strong> (causas simples sem advogado) e <strong>Ministério Público</strong> (em violência e infância). Não aceite “não tem jeito” sem tentar essas portas.</p>
 <h2>Perguntas frequentes</h2>
@@ -295,7 +295,7 @@ export const POSTS_C: Post[] = [
 <p>Negativas administrativas por erro de cálculo na renda, falta de consideração de despesas médicas ou avaliação pericial superficial são extremamente comuns. Antes de desistir, você pode:</p>
 <ul>
 <li><strong>Recurso administrativo (30 dias):</strong> protocolado pelo próprio Meu INSS juntando novos laudos ou correção do CadÚnico (se o problema era apenas cadastro desatualizado, muitas vezes um <strong>novo pedido após atualizar o CRAS</strong> resolve mais rápido);</li>
-<li><strong>Ação judicial no Juizado Especial Federal (JEF) ou via Defensoria Pública da União (DPU):</strong> permite abater despesas com saúde/medicamentos e passar por perito judicial especialista. Se precisa de atendimento gratuito ou de modelos orientativos, consulte nosso guia da <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria Pública</a>, use a <a href="/triagem">triagem gratuita do Guia Clara</a> e confira o <a href="/checklist">checklist completo de documentos</a>.</li>
+<li><strong>Ação judicial no Juizado Especial Federal (JEF) ou via Defensoria Pública da União (DPU):</strong> permite abater despesas com saúde/medicamentos e passar por perito judicial especialista. Se precisa de atendimento gratuito ou de modelos orientativos, consulte nosso guia da <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">Defensoria Pública</a>, use a <a href="/triagem">triagem gratuita do Aurora</a> e confira o <a href="/checklist">checklist completo de documentos</a>.</li>
 </ul>
 
 <h2>Perguntas frequentes</h2>
@@ -402,7 +402,7 @@ export const POSTS_C: Post[] = [
 </div>
 
 <h2>Como dar o primeiro passo sem gastar</h2>
-<p>Você pode buscar um <strong>advogado trabalhista</strong> (muitos trabalham com honorários de êxito, cobrando apenas ao final se você ganhar), o <strong>sindicato da sua categoria</strong> ou atendimento gratuito em núcleos de prática jurídica de faculdades de Direito. Também vale conhecer seus caminhos de assistência gratuita em nosso guia sobre <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">como conseguir atendimento jurídico gratuito</a>, organizar seu caso na <a href="/triagem">triagem gratuita do Guia Clara</a> e separar sua documentação com o <a href="/checklist">checklist de documentos</a>.</p>
+<p>Você pode buscar um <strong>advogado trabalhista</strong> (muitos trabalham com honorários de êxito, cobrando apenas ao final se você ganhar), o <strong>sindicato da sua categoria</strong> ou atendimento gratuito em núcleos de prática jurídica de faculdades de Direito. Também vale conhecer seus caminhos de assistência gratuita em nosso guia sobre <a href="/blog/defensoria-publica-como-conseguir-atendimento-gratuito">como conseguir atendimento jurídico gratuito</a>, organizar seu caso na <a href="/triagem">triagem gratuita do Aurora</a> e separar sua documentação com o <a href="/checklist">checklist de documentos</a>.</p>
 
 <h2>Perguntas frequentes</h2>
 <p><strong>1. Se eu pedir demissão trabalhando sem carteira, perco todos os direitos?</strong> Não. Mesmo pedindo demissão, você continua tendo direito ao reconhecimento do vínculo na CTPS, saldo de salário, férias vencidas e proporcionais + 1/3, 13º proporcional, horas extras e recolhimento do FGTS/INSS (apenas não saca o FGTS nem recebe multa de 40% e seguro-desemprego). Porém, se o patrão se recusa a assinar a carteira, é possível pedir <strong>rescisão indireta</strong> — que equivale a uma demissão sem justa causa com todos os direitos.</p>

@@ -1,86 +1,146 @@
 {
   "SP": {
-    "enderecos": ["Rua Boa Vista, 103 — Centro, São Paulo/SP (sede DPE-SP)"],
-    "telefones": ["0800 773 4340", "(11) 1234-5678"],
-    "horarios": "Seg a Sex, 8h–18h"
+    "nome_estado": "São Paulo",
+    "link_oficial": "https://www.defensoria.sp.def.br",
+    "telefones": ["0800 773 4340 (ligações gratuitas de fixo e celular)"],
+    "enderecos": [
+      "Unidade Central: Rua Boa Vista, 103 — Centro Histórico, São Paulo/SP",
+      "Outros municípios e comarcas: consulte o endereço da unidade no portal oficial"
+    ],
+    "horarios": "Horários e agendamento variam por unidade; consulte o portal oficial antes de comparecer",
+    "municipios_cobertos": ["São Paulo (Capital)", "Região Metropolitana", "Municípios do Interior com sede da DPE"],
+    "verificado_em": "Novembro/2026"
   },
   "RJ": {
-    "enderecos": ["Av. Marechal Câmara, 271 — Centro, Rio de Janeiro/RJ (sede DPE-RJ)"],
-    "telefones": ["129 (Defensoria RJ)", "(21) 9876-5432"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "MG": {
+    "nome_estado": "Rio de Janeiro",
+    "link_oficial": "https://defensoria.rj.def.br",
+    "telefones": ["129 (Disque Defensoria RJ)"],
     "enderecos": [
-      "Rua dos Guajajaras, 1707 — Barro Preto, Belo Horizonte/MG (sede DPE-MG)",
-      "Outras comarcas: consulte as unidades no site defensoria.mg.def.br"
+      "Sede: Av. Marechal Câmara, 314 — Centro, Rio de Janeiro/RJ",
+      "Núcleo de Defesa dos Direitos da Mulher (NUDEM): consulte unidades e plantões no portal"
     ],
-    "telefones": ["Ver canais de atendimento em defensoria.mg.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "RS": {
-    "enderecos": [
-      "Rua Sete de Setembro, 666 — Centro Histórico, Porto Alegre/RS (sede DPE-RS)",
-      "Outras comarcas: consulte as unidades no site defensoria.rs.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.rs.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "PR": {
-    "enderecos": [
-      "Rua Cruz Machado, 58 — Centro, Curitiba/PR (sede DPE-PR)",
-      "Outras comarcas: consulte as unidades no site defensoria.pr.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.pr.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "BA": {
-    "enderecos": [
-      "Av. Ulisses Guimarães, 3386 — Sussuarana, Salvador/BA (sede DPE-BA)",
-      "Outras comarcas: consulte as unidades no site da DPE-BA"
-    ],
-    "telefones": ["Ver canais de atendimento no site da DPE-BA"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "SC": {
-    "enderecos": [
-      "Florianópolis/SC — consulte a sede e as unidades no site defensoria.sc.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.sc.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "PE": {
-    "enderecos": [
-      "Recife/PE — consulte a sede e as unidades no site defensoria.pe.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.pe.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "CE": {
-    "enderecos": [
-      "Fortaleza/CE — consulte a sede e as unidades no site defensoria.ce.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.ce.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "GO": {
-    "enderecos": [
-      "Goiânia/GO — consulte a sede e as unidades no site defensoria.go.def.br"
-    ],
-    "telefones": ["Ver canais de atendimento em defensoria.go.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
-  },
-  "DF": {
-    "enderecos": [
-      "Brasília/DF — consulte as unidades no site defensoria.df.def.br"
-    ],
-    "telefones": ["129 (Defensoria DF)", "Ver canais em defensoria.df.def.br"],
-    "horarios": "Seg a Sex, 8h–18h"
+    "horarios": "Segunda a sexta; agendamento e plantões de urgência disponíveis no portal oficial",
+    "municipios_cobertos": ["Rio de Janeiro (Capital)", "Niterói", "Baixada Fluminense", "Interior"],
+    "verificado_em": "Novembro/2026"
   },
   "PA": {
+    "nome_estado": "Pará",
+    "link_oficial": "https://defensoria.pa.def.br",
+    "telefones": ["129 (Disque Defensoria PA)"],
     "enderecos": [
-      "Belém/PA — consulte a sede e as unidades no site da DPE-PA"
+      "Unidade Central / Atendimento à Mulher: Rua Padre Prudêncio, 154 — Campina, Belém/PA",
+      "Demais municípios do Pará: verifique a sede do polo regional no portal oficial"
     ],
-    "telefones": ["Ver canais de atendimento no site da DPE-PA"],
-    "horarios": "Seg a Sex, 8h–18h"
+    "horarios": "Consulte os horários da sua comarca e opções de agendamento em defensoria.pa.def.br",
+    "municipios_cobertos": ["Belém", "Ananindeua", "Santarém", "Marabá", "Demais polos regionais"],
+    "verificado_em": "Novembro/2026"
+  },
+  "MG": {
+    "nome_estado": "Minas Gerais",
+    "link_oficial": "https://defensoria.mg.def.br",
+    "telefones": ["129 (Central DPE-MG)"],
+    "enderecos": [
+      "Sede: Rua dos Guajajaras, 1707 — Barro Preto, Belo Horizonte/MG",
+      "Comarcas do interior: consulte a lista completa de unidades no portal oficial"
+    ],
+    "horarios": "Segunda a sexta; consulte regras locais de triagem e agendamento no portal",
+    "municipios_cobertos": ["Belo Horizonte", "Região Metropolitana", "Comarcas do Interior"],
+    "verificado_em": "Novembro/2026"
+  },
+  "RS": {
+    "nome_estado": "Rio Grande do Sul",
+    "link_oficial": "https://defensoria.rs.def.br",
+    "telefones": ["129 (Alô Defensoria RS)", "(51) 3210-9300"],
+    "enderecos": [
+      "Sede Central: Rua Sete de Setembro, 666 — Centro Histórico, Porto Alegre/RS",
+      "Demais comarcas gaúchas: consulte os locais no site defensoria.rs.def.br"
+    ],
+    "horarios": "Consulte os horários de atendimento e canais digitais no site oficial",
+    "municipios_cobertos": ["Porto Alegre", "Região Metropolitana", "Comarcas do Interior do RS"],
+    "verificado_em": "Novembro/2026"
+  },
+  "PR": {
+    "nome_estado": "Paraná",
+    "link_oficial": "https://defensoria.pr.def.br",
+    "telefones": ["Consulte canais e atendimento digital em defensoria.pr.def.br"],
+    "enderecos": [
+      "Sede: Rua Cruz Machado, 58 — Centro, Curitiba/PR",
+      "Outras cidades do Paraná: consulte endereços no site oficial"
+    ],
+    "horarios": "Segunda a sexta; consulte regras de atendimento da comarca no portal oficial",
+    "municipios_cobertos": ["Curitiba", "Londrina", "Maringá", "Foz do Iguaçu", "Demais cidades atendidas"],
+    "verificado_em": "Novembro/2026"
+  },
+  "BA": {
+    "nome_estado": "Bahia",
+    "link_oficial": "https://defensoria.ba.def.br",
+    "telefones": ["129 (Disque Defensoria BA)"],
+    "enderecos": [
+      "Sede Central: Av. Ulisses Guimarães, 3386 — Ed. Multicab, Sussuarana, Salvador/BA",
+      "Núcleo de Defesa da Mulher (NUDEM) e comarcas do interior: consulte no portal"
+    ],
+    "horarios": "Consulte agendamento e polos de atendimento no site oficial",
+    "municipios_cobertos": ["Salvador", "Feira de Santana", "Vitória da Conquista", "Polos regionais da Bahia"],
+    "verificado_em": "Novembro/2026"
+  },
+  "DF": {
+    "nome_estado": "Distrito Federal",
+    "link_oficial": "https://defensoria.df.def.br",
+    "telefones": ["129 (Disque Defensoria DF)"],
+    "enderecos": [
+      "Sede: SCS Quadra 04, Bloco A, Edifício Clementino Fraga — Asa Sul, Brasília/DF",
+      "Núcleos nas Regiões Administrativas: consulte no site oficial"
+    ],
+    "horarios": "Consulte os núcleos regionais e agendamento online no portal",
+    "municipios_cobertos": ["Brasília", "Ceilândia", "Taguatinga", "Demais Regiões Administrativas do DF"],
+    "verificado_em": "Novembro/2026"
+  },
+  "PE": {
+    "nome_estado": "Pernambuco",
+    "link_oficial": "https://defensoria.pe.def.br",
+    "telefones": ["129 (Central DPE-PE)"],
+    "enderecos": [
+      "Sede: Rua Marques do Amorim, 127 — Ilha do Leite, Recife/PE",
+      "Comarcas do interior: verifique os endereços no site oficial"
+    ],
+    "horarios": "Consulte os horários da unidade local no portal oficial",
+    "municipios_cobertos": ["Recife", "Olinda", "Jaboatão dos Guararapes", "Caruaru", "Petrolina"],
+    "verificado_em": "Novembro/2026"
+  },
+  "CE": {
+    "nome_estado": "Ceará",
+    "link_oficial": "https://defensoria.ce.def.br",
+    "telefones": ["129 (Alô Defensoria CE)"],
+    "enderecos": [
+      "Sede: Av. Pinto Bandeira, 1111 — Luciano Cavalcante, Fortaleza/CE",
+      "Polos e núcleos do interior: consulte no site defensoria.ce.def.br"
+    ],
+    "horarios": "Consulte agendamento prévio no portal oficial",
+    "municipios_cobertos": ["Fortaleza", "Caucaia", "Juazeiro do Norte", "Sobral", "Demais comarcas"],
+    "verificado_em": "Novembro/2026"
+  },
+  "SC": {
+    "nome_estado": "Santa Catarina",
+    "link_oficial": "https://defensoria.sc.def.br",
+    "telefones": ["Consulte canais de atendimento no portal defensoria.sc.def.br"],
+    "enderecos": [
+      "Sede: Av. Othon Gama D'Eça, 677 — Centro, Florianópolis/SC",
+      "Outros municípios catarinenses: consulte a lista de núcleos no portal oficial"
+    ],
+    "horarios": "Consulte os horários de atendimento da sua comarca no site oficial",
+    "municipios_cobertos": ["Florianópolis", "Joinville", "Blumenau", "Criciúma", "Chapecó"],
+    "verificado_em": "Novembro/2026"
+  },
+  "GO": {
+    "nome_estado": "Goiás",
+    "link_oficial": "https://defensoria.go.def.br",
+    "telefones": ["(62) 3201-3500 (Atendimento Geral DPE-GO)"],
+    "enderecos": [
+      "Sede: Alameda dos Buritis, 231 — Setor Central, Goiânia/GO",
+      "Demais comarcas de Goiás: consulte no portal defensoria.go.def.br"
+    ],
+    "horarios": "Consulte horários e canais de atendimento no site oficial",
+    "municipios_cobertos": ["Goiânia", "Aparecida de Goiânia", "Anápolis", "Comarcas atendidas"],
+    "verificado_em": "Novembro/2026"
   }
 }

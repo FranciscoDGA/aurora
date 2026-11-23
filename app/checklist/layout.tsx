@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Checklist de Documentos e Defensoria | Guia Clara',
+  title: 'Checklist de Documentos e Defensoria | Aurora',
   description: 'Lista completa de documentos e endereços da Defensoria Pública para protocolar pedidos de pensão, guarda ou medida protetiva.',
   alternates: { canonical: '/checklist' },
 }

@@ -33,10 +33,10 @@ export default function Image({ params }: { params: { slug: string } }) {
         }}
       >
         <div style={{ fontSize: 32, opacity: 0.85, marginBottom: 16 }}>
-          Guia Clara — Blog {post ? `• ${post.categoria}` : ''}
+          Aurora — Blog {post ? `• ${post.categoria}` : ''}
         </div>
         <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.15 }}>
-          {post?.titulo ?? 'Blog do Guia Clara'}
+          {post?.titulo ?? 'Blog do Aurora'}
         </div>
         <div style={{ fontSize: 28, opacity: 0.9, marginTop: 24 }}>Seus direitos, claros.</div>
       </div>

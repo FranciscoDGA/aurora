@@ -77,22 +77,22 @@ export const STATUS_CASO_LABELS: Record<string, string> = {
 export const PLANO_LABELS: Record<string, { label: string; features: string[] }> = {
   'gratuito': {
     label: 'Gratuito',
-    features: ['1 caso ativo', '2 documentos/mês', 'Orientação básica', 'Suporte comunitário'],
+    features: ['1 caso ativo', '2 documentos-base/mês', 'Orientação e checklist inicial', 'Acesso aos guias informativos'],
   },
   'aurora_plus': {
-    label: 'Clara+',
-    features: ['Casos ilimitados', 'Todos os documentos', 'Alertas de prazo', 'Suporte prioritário', 'R$ 29,90/mês'],
+    label: 'Aurora+',
+    features: ['Casos ilimitados', 'Documentos-base ilimitados', 'Acompanhamento do checklist', 'Suporte por e-mail', 'R$ 29,90/mês'],
   },
   'aurora_pro': {
-    label: 'Clara Pro',
-    features: ['Tudo do Clara+', 'Advogada parceira (1h/mês)', 'Certidões automáticas', 'R$ 79,90/mês'],
+    label: 'Aurora Pro (Em breve)',
+    features: ['Recursos do Aurora+', 'Novas ferramentas em desenvolvimento', 'Sujeito a validação profissional'],
   },
   'clara_plus': {
-    label: 'Clara+',
-    features: ['Casos ilimitados', 'Todos os documentos', 'Alertas de prazo', 'Suporte prioritário', 'R$ 29,90/mês'],
+    label: 'Aurora+',
+    features: ['Casos ilimitados', 'Documentos-base ilimitados', 'Acompanhamento do checklist', 'Suporte por e-mail', 'R$ 29,90/mês'],
   },
   'clara_pro': {
-    label: 'Clara Pro',
-    features: ['Tudo do Clara+', 'Advogada parceira (1h/mês)', 'Certidões automáticas', 'R$ 79,90/mês'],
+    label: 'Aurora Pro (Em breve)',
+    features: ['Recursos do Aurora+', 'Novas ferramentas em desenvolvimento', 'Sujeito a validação profissional'],
   },
 }

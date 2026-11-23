@@ -1,36 +1,42 @@
-# Clara Direitos (Aurora)
+# Aurora — Informação e Direitos da Mulher
 
-> Guia prático de direitos do cidadão, família, consumidor, trabalhador e benefícios sociais sem juridiquês.
+> Guia prático de direitos da mulher, família, trabalho e proteção sem juridiquês.
 
-Plataforma brasileira de orientação jurídica acessível com triagem inteligente, checklists de documentos e artigos passo a passo sobre pensão alimentícia, guarda, direitos trabalhistas, consumidor e INSS. Domínio canônico: https://clara-zeta-rose.vercel.app. Última atualização: 2026-11-20.
+Plataforma brasileira de orientação e organização de documentos-base preliminares, com triagem informativa, checklists de atendimento na Defensoria Pública e artigos sobre pensão alimentícia, guarda, divórcio, medidas protetivas e direitos trabalhistas.
 
 ## Triagem e Checklists de Documentos
 
-- [Clara — Seus Direitos, Claros](https://clara-zeta-rose.vercel.app/checklist): Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.
-- [Clara — Seus Direitos, Claros](https://clara-zeta-rose.vercel.app/triagem): Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.
+- [Aurora — Checklist de Documentos e Defensoria](/checklist): Guia de documentos recomendados e diretório oficial de portais e contatos da Defensoria Pública por estado.
+- [Aurora — Triagem de Direitos](/triagem): Organização de relatos, identificação de possíveis temas jurídicos e esclarecimento de dúvidas.
 
 ## Artigos e Guias de Direitos
 
-- [Blog — Direitos da mulher explicados sem juridiquês | Clara](https://clara-zeta-rose.vercel.app/blog): Guias práticos sobre pensão, guarda, divórcio, medida protetiva, direitos da gestante e mais. Conteúdo gratuito e atualizado.
-- [Alimentos provisórios e gravídicos: pensão rápida quando você precisa | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/alimentos-provisorios-e-gravidicos): O que são, quem tem direito, valores de referência e como pedir urgência antes da decisão final — inclusive na gravidez.
-- [Assédio sexual no trabalho: o que fazer e como provar | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/assedio-sexual-no-trabalho-o-que-fazer): Cantadas do chefe, chantagem, toques: o que configura assédio, como juntar provas à prova de contestação e onde denunciar.
-- [BPC/LOAS em 2026: quem tem direito, renda e como pedir no INSS | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/bpc-loas-quem-tem-direito-2026): Quem tem direito ao BPC/LOAS em 2026 (1 salário mínimo sem contribuir): critérios de idade e deficiência, limite de renda, CadÚnico e como pedir no Meu INSS.
-- [Como fazer boletim de ocorrência (BO): online e presencial | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/como-fazer-boletim-de-ocorrencia): Quando registrar, o que escrever para o relato valer, quais provas levar e por que o BO sustenta medida protetiva e processo.
-- [Como pedir pensão alimentícia: passo a passo completo | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/como-pedir-pensao-alimenticia-passo-a-passo): Quem tem direito, quais documentos juntar, quanto pedir, como funciona a ação e o que fazer se ele não pagar — do acordo ao protocolo.
-- [Defensoria Pública: como conseguir advogado gratuito | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/defensoria-publica-como-conseguir-atendimento-gratuito): Quem tem direito, teto de renda, documentos, agendamento e como chegar pronta para aproveitar cada minuto do atendimento.
-- [Direitos da gestante no trabalho: estabilidade e licença | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/direitos-da-gestante-no-trabalho): Demitida grávida? Conheça a estabilidade até 5 meses após o parto, a licença-maternidade e o que pedir na Justiça do Trabalho.
-- [Divórcio consensual ou litigioso: qual o seu caso? | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/divorcio-consensual-ou-litigioso): Diferenças, custos, prazos, documentos, partilha e guarda: entenda os dois caminhos e escolha o mais rápido para você.
-- [Guarda compartilhada: como funciona na prática | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/guarda-compartilhada-como-funciona): A regra da lei, quando cabe guarda unilateral, como ficam visitas e pensão, alienação parental e o que fazer se ele impede o contato.
-- [Medida protetiva: como pedir pela Lei Maria da Penha | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/medida-protetiva-como-pedir-maria-da-penha): O que é, quais medidas existem, onde pedir sem advogado, o que levar e o plano de saída. Guia direto para quem está em risco.
-- [Nome negativado indevidamente: como limpar e ser indenizada | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/nome-negativado-indevidamente-o-que-fazer): Dívida que você não fez no SPC/Serasa? Passo a passo para tirar o nome rápido, quando cabe dano moral e valores da jurisprudência.
-- [Partilha de bens no divórcio: quem fica com o quê | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/partilha-de-bens-no-divorcio): Regimes de bens, o que entra e o que não entra na divisão, dívidas, FGTS e o plano de partilha sem sair no prejuízo.
-- [Pensão atrasada: execução, penhora e prisão do devedor | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/pensao-atrasada-execucao-e-prisao): Ele parou de pagar? Rito da prisão para as 3 últimas, penhora de bens e contas, desconto em folha e estratégias que funcionam.
-- [Regulamentação de visitas: como garantir o convívio | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/regulamentacao-de-visitas): Rotina, férias, entrega, visitas assistidas e alienação parental: o guia para tirar a convivência do “quando der” e pôr no papel.
-- [Os 5 tipos de violência doméstica da Lei Maria da Penha | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/tipos-de-violencia-domestica-lei-maria-da-penha): Violência não é só agressão física: conheça a psicológica, moral, sexual e patrimonial — todas dão direito a proteção e medida protetiva.
-- [União estável: direitos, reconhecimento e dissolução | Blog da Clara](https://clara-zeta-rose.vercel.app/blog/uniao-estavel-direitos-e-reconhecimento): Mora junto há anos sem casar no papel? Entenda quando existe união estável, como provar e os direitos a pensão, partilha e herança.
+- [Blog — Direitos da mulher explicados sem juridiquês | Aurora](/blog): Guias informativos sobre pensão, guarda, divórcio, medida protetiva e direitos da gestante.
+- [Alimentos provisórios e gravídicos | Blog da Aurora](/blog/alimentos-provisorios-e-gravidicos): O que são, quem tem direito e como requerer na Defensoria ou com advogada.
+- [Assédio sexual no trabalho: o que fazer e como provar | Blog da Aurora](/blog/assedio-sexual-no-trabalho-o-que-fazer): O que configura assédio, como reunir evidências e onde denunciar.
+- [BPC/LOAS em 2026: critérios e como solicitar | Blog da Aurora](/blog/bpc-loas-quem-tem-direito-2026): Critérios de idade e deficiência, limite de renda e canais oficiais.
+- [Como fazer boletim de ocorrência (BO) | Blog da Aurora](/blog/como-fazer-boletim-de-ocorrencia): Canais online e presenciais e reunião de elementos comprobatórios.
+- [Como pedir pensão alimentícia: passo a passo | Blog da Aurora](/blog/como-pedir-pensao-alimenticia-passo-a-passo): Documentos para comprovar gastos, necessidade dos filhos e pedidos de alimentos.
+- [Defensoria Pública: atendimento jurídico gratuito | Blog da Aurora](/blog/defensoria-publica-como-conseguir-atendimento-gratuito): Requisitos de atendimento gratuito, agendamento e documentos.
+- [Direitos da gestante no trabalho: estabilidade e licença | Blog da Aurora](/blog/direitos-da-gestante-no-trabalho): Estabilidade provisória, licença-maternidade e rescisão.
+- [Divórcio consensual ou litigioso: entenda as diferenças | Blog da Aurora](/blog/divorcio-consensual-ou-litigioso): Prazos, documentos, partilha de bens e guarda dos filhos.
+- [Guarda compartilhada: como funciona na prática | Blog da Aurora](/blog/guarda-compartilhada-como-funciona): Regra geral da legislação, convivência e melhor interesse dos filhos.
+- [Medida protetiva: como solicitar pela Lei Maria da Penha | Blog da Aurora](/blog/medida-protetiva-como-pedir-maria-da-penha): Tipos de medidas, onde pedir e plano de segurança.
+- [Nome negativado indevidamente: como contestar | Blog da Aurora](/blog/nome-negativado-indevidamente-o-que-fazer): Passo a passo para contestar apontamentos indevidos nos órgãos de proteção ao crédito.
+- [Partilha de bens no divórcio | Blog da Aurora](/blog/partilha-de-bens-no-divorcio): Regimes de bens, divisão do patrimônio comum e dívidas.
+- [Pensão atrasada: execução e cobrança | Blog da Aurora](/blog/pensao-atrasada-execucao-e-prisao): Ritos de cumprimento de sentença e medidas coercitivas.
+- [Regulamentação de visitas e convivência familiar | Blog da Aurora](/blog/regulamentacao-de-visitas): Fixação de rotina, férias e convivência equilibrada.
+- [Tipos de violência doméstica da Lei Maria da Penha | Blog da Aurora](/blog/tipos-de-violencia-domestica-lei-maria-da-penha): Física, psicológica, moral, sexual e patrimonial explicadas.
+- [União estável: direitos, reconhecimento e dissolução | Blog da Aurora](/blog/uniao-estavel-direitos-e-reconhecimento): Comprovação de união, partilha e direitos sucessórios.
+- [Trabalho sem carteira assinada | Blog da Aurora](/blog/trabalho-sem-carteira-assinada-direitos-clt): Direitos trabalhistas, verbas rescisórias e reconhecimento de vínculo.
 
 ## Páginas Principais
 
-- [Clara — Seus Direitos, Claros](https://clara-zeta-rose.vercel.app/): Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.
-- [Clara — Seus Direitos, Claros](https://clara-zeta-rose.vercel.app/cadastro): Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.
-- [Clara — Seus Direitos, Claros](https://clara-zeta-rose.vercel.app/login): Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.
+- [Aurora — Informação e Direitos da Mulher](/)
+- [Criar Conta Gratuita](/cadastro)
+- [Entrar na Conta](/login)
+- [Recuperar Acesso](/recuperar-senha)
+- [Sobre a Aurora](/sobre)
+- [Contato e Suporte](/contato)
+- [Política de Privacidade (LGPD)](/privacidade)
+- [Termos de Uso](/termos-de-uso)

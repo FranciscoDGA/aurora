@@ -1,8 +1,8 @@
-import type { TriagemResult, TipoCaso, Urgencia } from '../types'
-import { TIPO_CASO_CATEGORIAS } from '../constants'
+import type { TriagemResult, TipoCaso, Urgencia, PerguntaEsclarecimento } from '../types'
+import { TIPO_CASO_CATEGORIAS, TIPO_CASO_LABELS } from '../constants'
 
-// Classificador leve por regras + keywords (roda em Edge, ~0 tokens).
-// Versão 2 pode trocar por DistilBERT ONNX sem mudar a interface.
+// Classificador preliminar por regras + termos-chave para orientação informativa.
+// Não substitui parecer individual nem diagnóstico emitido por profissional jurídica.
 
 interface Regra {
   tipo: TipoCaso
@@ -19,10 +19,10 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'critica',
     docs: ['medida_protetiva', 'boletim_ocorrencia_guia'],
     passos: [
-      'Ligue 180 (Central de Atendimento à Mulher) ou 190 em risco imediato',
-      'Vá à Delegacia da Mulher mais próxima com documento e relate os fatos',
-      'Peça medida protetiva de urgência (afastamento, proibição de contato)',
-      'Guarde provas: prints, fotos, áudios, testemunhas',
+      'Ligue 180 (Central de Atendimento à Mulher) ou 190 em caso de risco imediato',
+      'A medida protetiva pode ser solicitada na Delegacia da Mulher, na Defensoria Pública ou no Juizado de Violência Doméstica',
+      'Peça as medidas necessárias (ex.: afastamento do agressor da residência, proibição de contato e aproximação)',
+      'Se possível e seguro, guarde mensagens, fotos, áudios e nomes de pessoas que presenciaram os fatos',
     ],
   },
   {
@@ -31,10 +31,10 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'alta',
     docs: ['peticao_alimentos', 'alimentos_provisorios', 'gratuidade'],
     passos: [
-      'Junte certidões de nascimento dos filhos + comprovante de endereço',
-      'Liste gastos mensais das crianças (escola, saúde, alimentação)',
-      'Tentamos acordo? Se não, protocolamos ação de alimentos',
-      'Peça alimentos provisórios (valor rápido até decisão final)',
+      'Reúna certidões de nascimento dos filhos e comprovante de endereço atualizado',
+      'Faça um levantamento das despesas regulares dos filhos (escola, alimentação, saúde, vestuário)',
+      'Consulte a Defensoria Pública ou advogada para verificar a viabilidade de acordo prévio ou pedido judicial',
+      'Em caso de necessidade imediata, pode ser requerido ao juiz arbitramento de alimentos provisórios',
     ],
   },
   {
@@ -43,9 +43,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'normal',
     docs: ['peticao_divorcio_consensual', 'partilha_bens', 'gratuidade'],
     passos: [
-      'Confirmem acordo sobre filhos, bens e pensão',
-      'Juntem certidão de casamento + docs dos bens',
-      'Assinem petição conjunta (pode ser na Defensoria, sem advogado particular)',
+      'Verifiquem o consenso sobre partilha de bens, convivência com filhos e necessidade de pensão',
+      'Reúnam certidão de casamento atualizada e comprovantes de propriedade dos bens comuns',
+      'Apresentem minuta conjunta à Defensoria Pública ou advogada para protocolo ou encaminhamento ao cartório',
     ],
   },
   {
@@ -54,9 +54,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'alta',
     docs: ['peticao_divorcio_litigioso', 'alimentos_provisorios', 'gratuidade'],
     passos: [
-      'Registre a data da separação de fato',
-      'Liste bens comuns e dívidas',
-      'Protocole ação + peça alimentos provisórios e regulamentação de visitas',
+      'Anote a data aproximada da separação de fato',
+      'Faça uma listagem detalhada do patrimônio comum e eventuais dívidas adquiridas',
+      'Procure a Defensoria Pública ou advogada para ajuizamento da ação e eventual pedido de medidas liminares',
     ],
   },
   {
@@ -65,9 +65,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'alta',
     docs: ['regulamentacao_visitas', 'guarda_compartilhada', 'gratuidade'],
     passos: [
-      'Documente impedimentos de visita (mensagens, testemunhas)',
-      'Peça regulamentação de visitas + guarda compartilhada como regra',
-      'Se há risco à criança, peça guarda unilateral provisória',
+      'Documente tentativas de convivência e a rotina atual dos filhos',
+      'A regra geral da legislação é a guarda compartilhada, sempre visando ao melhor interesse da criança',
+      'Consulte assistência jurídica para formalizar o plano de convivência e visitas',
     ],
   },
   {
@@ -76,9 +76,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'alta',
     docs: ['denuncia_assedio', 'rescisao_indireta_guia'],
     passos: [
-      'Guarde TODAS as provas (prints, e-mails, testemunhas)',
-      'Denuncie no canal interno + MPT (Ministério Público do Trabalho)',
-      'Você pode pedir rescisão indireta (sair com todos os direitos)',
+      'Preserve com segurança todos os registros (mensagens, e-mails, registros de ponto, nomes de colegas)',
+      'Avalie relatar nos canais de compliance da empresa ou no Ministério Público do Trabalho (MPT)',
+      'Consulte a Defensoria Pública (seção trabalhista) ou advogada sobre a possibilidade de rescisão indireta',
     ],
   },
   {
@@ -87,9 +87,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'normal',
     docs: ['denuncia_assedio', 'rescisao_indireta_guia'],
     passos: [
-      'Registre datas, fatos e testemunhas',
-      'Denuncie no canal interno e no sindicato',
-      'Avalie rescisão indireta com advogada trabalhista',
+      'Mantenha um diário com datas, horários, locais, fatos ocorridos e possíveis testemunhas',
+      'Consulte o sindicato da categoria profissional e canais de orientação trabalhista',
+      'Converse com uma profissional para analisar os caminhos legais cabíveis',
     ],
   },
   {
@@ -98,9 +98,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'alta',
     docs: ['reclamatoria_trabalhista', 'estabilidade_gestante'],
     passos: [
-      'Gestante tem estabilidade: não pode ser demitida (da confirmação até 5 meses após parto)',
-      'Guarde exame, ultrassom, carteira de trabalho',
-      'Entre com reclamatória pedindo reintegração ou indenização',
+      'A legislação prevê estabilidade provisória da gestante desde a confirmação da gravidez até 5 meses após o parto',
+      'Guarde laudos médicos, exames com data e a carteira de trabalho',
+      'Busque atendimento na Defensoria Pública ou advogada trabalhista para pleitear reintegração ou indenização',
     ],
   },
   {
@@ -109,9 +109,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'normal',
     docs: ['declaratoria_inexistencia_debito', 'dano_moral_guia'],
     passos: [
-      'Pegue extrato no Serasa/SPC e guarde o comprovante da negativação',
-      'Contestação administrativa + ação declaratória com pedido de liminar',
-      'Cabe dano moral (jurisprudência: R$ 5k–15k)',
+      'Obtenha o extrato formal do órgão de proteção ao crédito comprovando a negativação',
+      'Formalize contestação administrativa perante a empresa cobradora e guarde o protocolo',
+      'Consulte a Defensoria Pública ou Juizado Especial Cível para contestar a dívida indevida',
     ],
   },
   {
@@ -120,9 +120,9 @@ const REGRAS: Regra[] = [
     urgenciaBase: 'normal',
     docs: ['inventario_inicial', 'nomeacao_inventariante'],
     passos: [
-      'Junte certidão de óbito + docs de herdeiros + docs dos bens',
-      'Prazo: abrir em 60 dias (multa após)',
-      'Se todos concordam: inventário em cartório (mais rápido e barato)',
+      'Reúna a certidão de óbito, documentos dos herdeiros e certidões de bens do falecido',
+      'Fique atenta ao prazo legal de 60 dias para abertura do procedimento sem incidência de multa fiscal',
+      'Havendo concordância e ausência de herdeiros menores, o procedimento pode ser realizado em cartório',
     ],
   },
 ]
@@ -132,6 +132,73 @@ const RISCO_ALTO = ['medida protetiva', 'boletim', 'não paga há meses', 'despe
 
 function norm(s: string) {
   return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
+export function obterPerguntasEsclarecimento(tipo: TipoCaso): PerguntaEsclarecimento[] {
+  const padraoOpcoes = ['Não sei', 'Prefiro não responder']
+  switch (tipo) {
+    case 'pensao_alimenticia_inicial':
+      return [
+        {
+          id: 'decisao_previa',
+          pergunta: 'Já existe algum valor de pensão fixado formalmente por juiz ou em cartório?',
+          opcoes: ['Não, nunca foi fixado formalmente', 'Sim, já existe decisão judicial ou acordo homologado', ...padraoOpcoes],
+        },
+        {
+          id: 'filhos_menores',
+          pergunta: 'Há filhos menores de 18 anos ou dependentes com necessidades especiais?',
+          opcoes: ['Sim, há filhos menores de 18 anos', 'Não há menores dependentes', ...padraoOpcoes],
+        },
+      ]
+    case 'medida_protetiva_urgente':
+      return [
+        {
+          id: 'seguranca_imediata',
+          pergunta: 'Você e seus dependentes estão em um local seguro neste momento?',
+          opcoes: ['Sim, estou em local seguro', 'Não / sinto risco iminente à minha segurança', ...padraoOpcoes],
+        },
+        {
+          id: 'convivencia_agressor',
+          pergunta: 'O autor das agressões/ameaças reside no mesmo imóvel ou tem livre acesso?',
+          opcoes: ['Sim, reside no mesmo imóvel ou tem livre acesso', 'Não reside no local', ...padraoOpcoes],
+        },
+      ]
+    case 'divorcio_consensual':
+    case 'divorcio_litigioso':
+      return [
+        {
+          id: 'acordo_partes',
+          pergunta: 'Existe concordância entre as partes sobre a partilha de bens e os cuidados com filhos?',
+          opcoes: ['Sim, há acordo mútuo', 'Não, há divergência ou disputa', ...padraoOpcoes],
+        },
+      ]
+    case 'guarda_compartilhada':
+    case 'guarda_unilateral':
+      return [
+        {
+          id: 'residencia_filhos',
+          pergunta: 'Com quem os filhos estão residindo atualmente?',
+          opcoes: ['Residem comigo', 'Residem com o outro genitor', 'Alternam moradia', ...padraoOpcoes],
+        },
+      ]
+    case 'assedio_moral':
+    case 'assedio_sexual':
+      return [
+        {
+          id: 'vinculo_empregaticio',
+          pergunta: 'Você ainda está trabalhando ativamente na empresa/instituição?',
+          opcoes: ['Sim, continuo trabalhando', 'Não, fui demitida ou já me afastei', ...padraoOpcoes],
+        },
+      ]
+    default:
+      return [
+        {
+          id: 'contato_defensoria',
+          pergunta: 'Você já tentou algum contato ou atendimento prévio com a Defensoria Pública?',
+          opcoes: ['Não, este é o primeiro contato', 'Sim, já fui atendida anteriormente', ...padraoOpcoes],
+        },
+      ]
+  }
 }
 
 export function triar(relato: string): TriagemResult {
@@ -156,13 +223,24 @@ export function triar(relato: string): TriagemResult {
       categoria: 'outro',
       urgencia: 'baixa',
       confianca: 0.3,
+      assunto_identificado: 'Assunto não identificado com clareza',
+      dados_insuficientes: true,
+      perguntas_esclarecimento: [
+        {
+          id: 'detalhe_geral',
+          pergunta: 'Seu caso envolve família (divórcio, pensão, guarda), situação de violência ou relação de trabalho?',
+          opcoes: ['Direito de Família', 'Situação de Violência / Ameaça', 'Direito do Trabalho', 'Não sei', 'Prefiro não responder'],
+        },
+      ],
       dados_extraidos: extrairDados(relato),
       proximos_passos: [
-        'Conte com mais detalhes: o que aconteceu, quando, quem está envolvido',
-        'Se for urgente (risco de vida), ligue 180 ou 190 agora',
+        'Descreva com um pouco mais de detalhes o que aconteceu, datas aproximadas e quem está envolvido.',
+        'Se você estiver sob risco imediato, ligue 190 (Polícia Militar) ou 180 (Central da Mulher).',
+        'Consulte uma defensora pública ou advogada para avaliação personalizada do seu relato.',
       ],
       documentos_sugeridos: [],
       tokens_estimados: Math.ceil(relato.length / 4),
+      aviso_legal: 'Dados insuficientes para estruturar minutas no momento. Recomendamos detalhar melhor ou buscar atendimento presencial.',
     }
   }
 
@@ -171,16 +249,22 @@ export function triar(relato: string): TriagemResult {
   else if (RISCO_ALTO.some((k) => texto.includes(norm(k))) && urgencia !== 'critica') urgencia = 'alta'
 
   const confianca = Math.min(0.55 + melhorScore * 0.08, 0.95)
+  const dadosInsuficientes = melhorScore < 2 || relato.trim().split(/\s+/).length < 6
 
   return {
     tipo_caso: melhor.tipo,
     categoria: TIPO_CASO_CATEGORIAS[melhor.tipo] ?? 'família',
     urgencia,
     confianca: Math.round(confianca * 100) / 100,
+    assunto_identificado: TIPO_CASO_LABELS[melhor.tipo] ?? melhor.tipo,
+    dados_insuficientes: dadosInsuficientes,
+    perguntas_esclarecimento: obterPerguntasEsclarecimento(melhor.tipo),
     dados_extraidos: extrairDados(relato),
     proximos_passos: melhor.passos,
-    documentos_sugeridos: melhor.docs,
+    // Quando os dados forem muito vagos/insuficientes, não sugerimos documentos precipitadamente sem ressalva
+    documentos_sugeridos: dadosInsuficientes ? [] : melhor.docs,
     tokens_estimados: Math.ceil(relato.length / 4),
+    aviso_legal: 'Classificação preliminar baseada em termos informados. Não substitui consulta jurídica individual.',
   }
 }
 

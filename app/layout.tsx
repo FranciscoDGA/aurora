@@ -17,21 +17,21 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   metadataBase: new URL(APP_URL),
-  title: 'Guia Clara — Seus Direitos, Claros',
-  description: 'Navegadora de direitos da mulher. Divórcio, pensão, guarda, medida protetiva — documentos jurídicos em minutos, sem advogado.',
-  keywords: ['direitos da mulher', 'divórcio', 'pensão alimentícia', 'guarda', 'medida protetiva', 'jurídico'],
-  authors: [{ name: 'Guia Clara — Direitos da Mulher' }],
+  title: 'Aurora — Informação e Direitos da Mulher',
+  description: 'Plataforma de orientação geral e organização de documentos-base voltada aos direitos das mulheres: pensão, divórcio, guarda, proteção e trabalho.',
+  keywords: ['direitos da mulher', 'divórcio', 'pensão alimentícia', 'guarda', 'medida protetiva', 'defensoria pública'],
+  authors: [{ name: 'Aurora — Direitos da Mulher' }],
   openGraph: {
-    title: 'Guia Clara — Seus Direitos, Claros',
-    description: 'Documentos jurídicos personalizados para mulheres em minutos. WhatsApp, gratuito, seguro.',
+    title: 'Aurora — Informação e Direitos da Mulher',
+    description: 'Organize suas informações e conheça seus direitos com acolhimento, transparência e segurança.',
     type: 'website',
     locale: 'pt_BR',
     url: APP_URL,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guia Clara — Seus Direitos, Claros',
-    description: 'Documentos jurídicos personalizados para mulheres em minutos.',
+    title: 'Aurora — Informação e Direitos da Mulher',
+    description: 'Organize suas informações e conheça seus direitos com acolhimento, transparência e segurança.',
   },
 }
 
@@ -40,14 +40,14 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      name: 'Guia Clara',
+      name: 'Aurora',
       url: APP_URL,
       logo: `${APP_URL}/apple-icon.png`,
-      description: 'Plataforma brasileira de orientação jurídica acessível e geração de documentos-base.',
+      description: 'Plataforma brasileira de orientação e organização de documentos-base voltada aos direitos das mulheres.',
     },
     {
       '@type': 'WebSite',
-      name: 'Guia Clara',
+      name: 'Aurora',
       url: APP_URL,
       inLanguage: 'pt-BR',
     },

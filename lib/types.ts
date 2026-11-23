@@ -13,15 +13,25 @@ export type TipoCaso =
 
 export type Urgencia = 'critica' | 'alta' | 'normal' | 'baixa'
 
+export interface PerguntaEsclarecimento {
+  id: string
+  pergunta: string
+  opcoes: string[]
+}
+
 export interface TriagemResult {
   tipo_caso: TipoCaso
   categoria: string
   urgencia: Urgencia
   confianca: number
+  assunto_identificado: string
+  perguntas_esclarecimento?: PerguntaEsclarecimento[]
+  dados_insuficientes?: boolean
   dados_extraidos: Record<string, unknown>
   proximos_passos: string[]
   documentos_sugeridos: string[]
   tokens_estimados: number
+  aviso_legal?: string
 }
 
 export interface Perfil {

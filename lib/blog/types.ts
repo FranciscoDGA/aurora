@@ -3,7 +3,11 @@ export interface Post {
   titulo: string
   descricao: string
   categoria: 'Família' | 'Violência' | 'Trabalho' | 'Consumidor' | 'Direitos'
-  data: string // ISO
+  data: string // ISO (YYYY-MM-DD)
+  dataAtualizacao?: string // ISO (YYYY-MM-DD)
+  responsavelEditorial?: string
+  statusRevisao?: string
+  fontesReferencias?: string[]
   leituraMin: number
   conteudo: string // HTML (h2/p/ul/ol/strong — o h1 é o título da página)
 }

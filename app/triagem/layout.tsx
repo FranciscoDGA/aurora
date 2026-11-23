@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Triagem Gratuita de Direitos | Guia Clara',
+  title: 'Triagem Informativa de Direitos | Aurora',
   description: 'Descreva seu caso em palavras simples para identificar urgência, tipo de ação e documentos necessários na Defensoria.',
   alternates: { canonical: '/triagem' },
 }

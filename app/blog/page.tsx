@@ -8,8 +8,8 @@ import { POSTS } from '@/lib/blog'
 import { CATEGORIAS, getAllPosts } from '@/lib/blog/types'
 
 export const metadata = {
-  title: 'Blog — Direitos explicados sem juridiquês | Guia Clara',
-  description: 'Guias práticos sobre pensão, guarda, divórcio, medida protetiva, direitos da gestante e mais. Conteúdo gratuito e atualizado.',
+  title: 'Blog — Direitos da mulher explicados com clareza | Aurora',
+  description: 'Guias informativos sobre pensão, guarda, divórcio, medida protetiva e direitos no trabalho. Conteúdo gratuito e baseado na legislação.',
   alternates: { canonical: '/blog' },
 }
 
@@ -26,7 +26,7 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-aurora-500 to-aurora-700 text-white shadow-sm">
               <Scale size={19} />
             </span>
-            Guia Clara
+            Aurora
           </Link>
           <nav className="flex items-center gap-2">
             <Link href="/"><Button variant="ghost" size="sm">Início</Button></Link>
@@ -39,13 +39,12 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
       <main className="flex-1">
         <section className="border-b border-neutral-200/70 bg-gradient-to-b from-aurora-50/70 via-white to-white">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-16 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-aurora-600 mb-2">Guias práticos</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-aurora-600 mb-2">Guias informativos</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-950">
-              Blog do Guia Clara
+              Blog Informativo da Aurora
             </h1>
             <p className="mt-4 text-base sm:text-lg leading-relaxed text-neutral-600 max-w-2xl mx-auto">
-              Direitos da mulher explicados sem juridiquês: pensão, guarda, divórcio, medida protetiva,
-              trabalho e consumo. Leia e, se precisar, gere seus documentos com a Clara.
+              Direitos da mulher explicados de forma acolhedora e sem juridiquês: pensão, guarda, divórcio, medidas protetivas, trabalho e benefícios.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-2">
               <Link href="/blog">
@@ -117,7 +116,7 @@ export default function BlogPage({ searchParams }: { searchParams?: { categoria?
 
       <footer className="border-t border-neutral-200/80 bg-white py-8 text-xs text-neutral-500">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span>Guia Clara © 2026 — Orientação jurídica acessível</span>
+          <span>Aurora © 2026 — Apoio aos direitos das mulheres</span>
           <div className="flex flex-wrap justify-center gap-5">
             <Link href="/sobre" className="hover:text-aurora-700 transition-colors">Sobre</Link>
             <Link href="/triagem" className="hover:text-aurora-700 transition-colors">Triagem</Link>
